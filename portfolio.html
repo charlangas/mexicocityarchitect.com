@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the diverse portfolio of architectural projects by Architect Co., showcasing residential, commercial, and sustainable designs.">
+    <title>Portfolio | Architect Co.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+      @font-face {
+        font-family: 'LucideIcons';
+        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
+      }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">Architect Co.</a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="residential-design.html">Services</a></li> <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="menu-icon" id="menu-icon" aria-label="Toggle Menu" aria-expanded="false" tabindex="0">&#xe9a8;</div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-header">
+            <div class="container">
+                <h1>Our Architectural Portfolio</h1>
+                <p>Explore Our Diverse Range of Completed Projects</p>
+            </div>
+        </section>
+
+        <section id="portfolio-main" class="section">
+            <div class="container">
+
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="residential">Residential</button>
+                    <button class="filter-btn" data-filter="commercial">Commercial</button>
+                    <button class="filter-btn" data-filter="sustainable">Sustainable</button>
+                    <button class="filter-btn" data-filter="renovation">Renovation</button>
+                    </div>
+
+                <div class="portfolio-grid">
+                    <a href="project-alpha.html" class="project-item" data-category="residential sustainable"> <img src="https://placehold.co/600x400/cccccc/999999?text=Project+Alpha" alt="Modern Urban Residence" loading="lazy">
+                        <div class="project-overlay">
+                            <h3>Modern Urban Residence</h3>
+                            <p>Residential / Sustainable</p>
+                            <span class="view-project-link">View Project</span>
+                        </div>
+                    </a>
+                    <a href="project-beta.html" class="project-item" data-category="commercial sustainable">
+                        <img src="https://placehold.co/600x400/bbbbbb/888888?text=Project+Beta" alt="Eco-Friendly Office Hub" loading="lazy">
+                         <div class="project-overlay">
+                            <h3>Eco-Friendly Office Hub</h3>
+                            <p>Commercial / Sustainable</p>
+                             <span class="view-project-link">View Project</span>
+                        </div>
+                    </a>
+                     <a href="project-gamma.html" class="project-item" data-category="residential renovation">
+                        <img src="https://placehold.co/600x400/dddddd/aaaaaa?text=Project+Gamma" alt="Coastal Retreat Renovation" loading="lazy">
+                         <div class="project-overlay">
+                            <h3>Coastal Retreat Renovation</h3>
+                            <p>Residential / Renovation</p>
+                             <span class="view-project-link">View Project</span>
+                        </div>
+                    </a>
+                     <a href="project-delta.html" class="project-item" data-category="residential">
+                        <img src="https://placehold.co/600x400/e0e0e0/bbbbbb?text=Project+Delta" alt="Suburban Family Home" loading="lazy">
+                         <div class="project-overlay">
+                            <h3>Suburban Family Home</h3>
+                            <p>Residential</p>
+                             <span class="view-project-link">View Project</span>
+                        </div>
+                    </a>
+                     <a href="project-epsilon.html" class="project-item" data-category="commercial">
+                        <img src="https://placehold.co/600x400/d8d8d8/aaaaaa?text=Project+Epsilon" alt="Boutique Hotel Design" loading="lazy">
+                         <div class="project-overlay">
+                            <h3>Boutique Hotel Design</h3>
+                            <p>Commercial / Hospitality</p>
+                            <span class="view-project-link">View Project</span>
+                        </div>
+                    </a>
+                     <a href="project-zeta.html" class="project-item" data-category="renovation sustainable">
+                        <img src="https://placehold.co/600x400/f0f0f0/cccccc?text=Project+Zeta" alt="Historic Building Restoration" loading="lazy">
+                         <div class="project-overlay">
+                            <h3>Historic Restoration</h3>
+                            <p>Renovation / Sustainable</p>
+                             <span class="view-project-link">View Project</span>
+                        </div>
+                    </a>
+                     </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                 <div class="footer-column contact">
+                     <a href="index.html" class="footer-logo">Architect Co.</a>
+                    <ul class="footer-contact">
+                         <li><i>&#xe9b0;</i> 123 Architecture Lane, <br>Design City, DC 12345</li>
+                         <li><i>&#xe9b6;</i> <a href="tel:+15551234567">(555) 123-4567</a></li>
+                         <li><i>&#xe9a6;</i> <a href="mailto:info@architectco.com">info@architectco.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column nav">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-nav">
+                         <li><a href="index.html">Home</a></li>
+                         <li><a href="residential-design.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column social">
+                    <h4>Follow Us</h4>
+                    <ul class="social-links">
+                        <li><a href="#" aria-label="Facebook" title="Facebook">&#xe94d;</a></li>
+                        <li><a href="#" aria-label="Instagram" title="Instagram">&#xe98c;</a></li>
+                        <li><a href="#" aria-label="LinkedIn" title="LinkedIn">&#xe9a1;</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Architect Co. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Mobile Navigation Toggle
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const isExpanded = navLinks.classList.contains('active');
+            menuIcon.setAttribute('aria-expanded', isExpanded);
+        });
+
+        menuIcon.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                navLinks.classList.toggle('active');
+                const isExpanded = navLinks.classList.contains('active');
+                menuIcon.setAttribute('aria-expanded', isExpanded);
+            }
+        });
+
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                if (window.innerWidth < 768) {
+                     navLinks.classList.remove('active');
+                     menuIcon.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Basic JS for Filter Button Active State (Visual Only)
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(el => el.classList.remove('active'));
+                // Add active class to the clicked button
+                btn.classList.add('active');
+                // NOTE: Add actual filtering logic here using the button's data-filter attribute
+                // E.g., get the filter value: const filterValue = btn.getAttribute('data-filter');
+                // Then loop through .project-item elements and hide/show based on their data-category.
+                console.log('Filtering by:', btn.getAttribute('data-filter')); // Placeholder action
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>
