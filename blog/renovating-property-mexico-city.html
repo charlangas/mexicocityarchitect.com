@@ -97,7 +97,7 @@
                 <div class="call-to-action" style="background: #f4f4f4; padding: 40px; margin-top: 60px; border-radius: 4px;">
                     <h3 style="margin-top: 0;">Planning a Renovation?</h3>
                     <p>Talacha offers end-to-end design and build services. We handle the DRO, the Union, and the design, delivering NYC-level precision with local craft.</p>
-                    <a href="../index.html#contact" class="btn">Get a Quote</a>
+                    <a href="#" class="btn open-modal">Get a Quote</a>
                 </div>
 
                  <div class="faq-section" style="margin-top: 50px;">
@@ -140,6 +140,53 @@
             </div>
         </div>
     </footer>
+
+    <!-- LEAD MODAL -->
+    <div id="lead-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 style="margin-bottom: 10px;">Request Consultation</h3>
+            <p style="margin-bottom: 30px; font-size: 0.9rem;">Tell us about your project. We'll respond within 24 hours.</p>
+            <form name="lead-form" method="POST" action="../thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="lead-form" />
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="source_page" id="modal-source" value="">
+                
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone (Optional)">
+                <textarea name="message" placeholder="Project Details (Location, Size, Type)..." required></textarea>
+                
+                <button type="submit" class="btn" style="width: 100%;">Send Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        const modal = document.getElementById('lead-modal');
+        const btns = document.querySelectorAll('.open-modal');
+        const span = document.querySelector('.close-modal');
+        const sourceInput = document.getElementById('modal-source');
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                sourceInput.value = window.location.pathname; // Capture Source Page
+                modal.style.display = 'block';
+            });
+        });
+
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>
