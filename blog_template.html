@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} | Talacha Journal</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <a href="../index.html" class="logo"><img src="../img/logo.svg" alt="Talacha Logo"></a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../index.html">Work</a></li>
+                <li><a href="../about.html">Studio</a></li>
+                <li><a href="../blog.html">Journal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="section" style="padding-top: 150px;">
+        <div class="container content-block">
+            <!-- Sidebar -->
+            <div class="sticky-sidebar">
+                <p style="font-size: 0.9rem; color: #999; text-transform: uppercase; letter-spacing: 0.1em;">{{date}}</p>
+                <h1 style="font-size: 2.5rem; margin-top: 20px;">{{title}}</h1>
+                <p style="font-size: 1.1rem; color: #555; margin-top: 20px;">{{excerpt}}</p>
+                <a href="../locations/architects-{{related_location}}.html" class="btn-secondary" style="margin-top: 40px; font-size: 0.8rem;">Explore {{related_location}}</a>
+            </div>
+
+            <!-- Content -->
+            <div class="main-text">
+                <img src="{{image}}" alt="{{title}}" style="width: 100%; height: 400px; object-fit: cover; margin-bottom: 40px;">
+                {{content}}
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p style="color: #fff;">Talacha Studio &copy; 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>

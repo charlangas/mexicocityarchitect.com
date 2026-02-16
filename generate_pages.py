@@ -4,6 +4,7 @@ import os
 # Configuration
 locations_file = 'locations.json'
 modifiers_file = 'service_modifiers.json'
+blog_file = 'blog.json'
 template_file = 'location_template.html'
 output_dir = 'locations'
 
@@ -17,6 +18,9 @@ with open(locations_file, 'r', encoding='utf-8') as f:
 
 with open(modifiers_file, 'r', encoding='utf-8') as f:
     modifiers = json.load(f)
+
+with open(blog_file, 'r', encoding='utf-8') as f:
+    blog_posts = json.load(f)
 
 # Load template into memory
 with open(template_file, 'r', encoding='utf-8') as f:
@@ -55,6 +59,25 @@ for service in services:
                 neighbor_slug = f"{service_slug}-{neighbor['slug']}.html"
                 nearby_html += f'<li><a href="{neighbor_slug}">{service["name"]} in {neighbor["name"]}</a><span>Explore Zone &rarr;</span></li>'
         nearby_html += '</ul>'
+
+        # BUILD BLOG SECTION HTML
+        blog_html = ""
+        related_post = next((post for post in blog_posts if post['related_location'] == location['slug']), None)
+        
+        if related_post:
+            blog_html = f"""
+            <section class="section" style="background: #fafafa;">
+                <div class="container grid-2" style="align-items: center;">
+                    <img src="{related_post['image'].replace('../', '../')}" alt="{related_post['title']}" style="width: 100%; height: 350px; object-fit: cover;">
+                    <div>
+                        <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: #999;">From the Journal</p>
+                        <h2 style="margin: 10px 0;">{related_post['title']}</h2>
+                        <p>{related_post['excerpt']}</p>
+                        <a href="../blog/{related_post['slug']}.html" class="btn-secondary">Read Article</a>
+                    </div>
+                </div>
+            </section>
+            """
 
         # MERGE CONTENT
         # Vibe
@@ -118,6 +141,7 @@ for service in services:
         page_content = page_content.replace("{{slug}}", slug)
         page_content = page_content.replace("{{location_slug}}", location['slug'])
         page_content = page_content.replace("{{nearby_links_html}}", nearby_html)
+        page_content = page_content.replace("{{blog_section_html}}", blog_html)
         
         # Write file
         with open(filepath, 'w', encoding='utf-8') as f:

@@ -2,250 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore architectural insights, design trends, sustainable practices, and valuable resources from the experts at Architect Co.">
-    <title>Blog & Resources | Architect Co.</title>
+    <title>Journal | Talacha</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-      @font-face {
-        font-family: 'LucideIcons';
-        src: url(https://cdn.jsdelivr.net/npm/lucide-static@latest/font/Lucide.ttf) format('truetype');
-      }
-    </style>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YBB82P1LG1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YBB82P1LG1');
-</script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,600&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <header class="header">
-        <div class="container navbar">
-            <a href="index.html" class="logo">Architect Co.</a>
-            <nav>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="residential-design.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="blog.html" class="active">Blog</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="menu-icon" id="menu-icon" aria-label="Toggle Menu" aria-expanded="false" tabindex="0">&#xe9a8;</div>
-        </div>
+        <a href="index.html" class="logo"><img src="img/logo.svg" alt="Talacha Logo"></a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Work</a></li>
+                <li><a href="about.html">Studio</a></li>
+                <li><a href="blog.html">Journal</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <main>
-
-        <section class="page-header">
-            <div class="container">
-                <h1>Architecture Insights & Resources</h1>
-                <p>Trends, Tips, and Downloads from Architect Co.</p>
-            </div>
-        </section>
-
-        <section id="blog-posts" class="section">
-            <div class="container">
-
-                <div class="filter-controls">
-                    <button class="filter-btn active" data-filter="all">All Posts</button>
-                    <button class="filter-btn" data-filter="trends">Design Trends</button>
-                    <button class="filter-btn" data-filter="sustainability">Sustainability</button>
-                    <button class="filter-btn" data-filter="process">Process</button>
-                    <button class="filter-btn" data-filter="materials">Materials</button>
-                    </div>
-
-                <div class="blog-grid">
-                    <article class="blog-post-card" data-category="trends">
-                         <img src="https://placehold.co/600x400/e0e0e0/aaaaaa?text=Biophilic+Design" alt="Biophilic Design Example" loading="lazy">
-                         <div class="blog-post-content">
-                             <p class="blog-post-meta">April 1, 2025 <span>|</span> Design Trends</p>
-                             <h4><a href="blog-post-template.html">The Enduring Appeal of Biophilic Design in Modern Homes</a></h4>
-                             <p class="blog-post-excerpt">Explore how integrating natural elements like light, vegetation, and materials enhances well-being and creates calming, productive spaces...</p>
-                             <a href="blog-post-template.html" class="read-more-link">Read More &rarr;</a>
-                         </div>
-                    </article>
-                     <article class="blog-post-card" data-category="materials sustainability">
-                         <img src="https://placehold.co/600x400/d8d8d8/999999?text=Sustainable+Timber" alt="Sustainable Timber Construction" loading="lazy">
-                         <div class="blog-post-content">
-                             <p class="blog-post-meta">March 15, 2025 <span>|</span> Materials, Sustainability</p>
-                             <h4><a href="blog-post-template.html">Material Spotlight: The Versatility of Sustainable Timber</a></h4>
-                              <p class="blog-post-excerpt">A look at the environmental benefits, aesthetic qualities, and innovative applications of using responsibly sourced wood in architecture...</p>
-                             <a href="blog-post-template.html" class="read-more-link">Read More &rarr;</a>
-                         </div>
-                    </article>
-                     <article class="blog-post-card" data-category="process">
-                         <img src="https://placehold.co/600x400/f0f0f0/bbbbbb?text=Permit+Process" alt="Architectural Drawings for Permits" loading="lazy">
-                         <div class="blog-post-content">
-                             <p class="blog-post-meta">February 28, 2025 <span>|</span> Process</p>
-                             <h4><a href="blog-post-template.html">Navigating the Architectural Permit Process: A Homeowner's Guide</a></h4>
-                              <p class="blog-post-excerpt">Tips and insights for homeowners and developers on understanding requirements and streamlining the approval process for building projects...</p>
-                             <a href="blog-post-template.html" class="read-more-link">Read More &rarr;</a>
-                         </div>
-                    </article>
-                     <article class="blog-post-card" data-category="trends renovation">
-                         <img src="https://placehold.co/600x400/cccccc/aaaaaa?text=Kitchen+Renovation" alt="Modern Kitchen Renovation" loading="lazy">
-                         <div class="blog-post-content">
-                             <p class="blog-post-meta">February 10, 2025 <span>|</span> Design Trends, Renovation</p>
-                             <h4><a href="blog-post-template.html">Top Kitchen Renovation Trends for a Stylish & Functional Space</a></h4>
-                             <p class="blog-post-excerpt">From smart appliances to statement islands, discover the latest ideas for creating a kitchen that's both beautiful and practical...</p>
-                             <a href="blog-post-template.html" class="read-more-link">Read More &rarr;</a>
-                         </div>
-                    </article>
-                     <article class="blog-post-card" data-category="sustainability">
-                         <img src="https://placehold.co/600x400/d0d0d0/999999?text=Energy+Efficiency" alt="Energy Efficient Home Diagram" loading="lazy">
-                         <div class="blog-post-content">
-                             <p class="blog-post-meta">January 25, 2025 <span>|</span> Sustainability</p>
-                              <h4><a href="blog-post-template.html">Passive Design Strategies for Energy-Efficient Homes</a></h4>
-                              <p class="blog-post-excerpt">Learn how orientation, shading, ventilation, and insulation work together to reduce energy consumption and improve thermal comfort...</p>
-                             <a href="blog-post-template.html" class="read-more-link">Read More &rarr;</a>
-                         </div>
-                    </article>
-                     <article class="blog-post-card" data-category="process">
-                         <img src="https://placehold.co/600x400/e8e8e8/bbbbbb?text=Choosing+Architect" alt="Architect Meeting with Client" loading="lazy">
-                         <div class="blog-post-content">
-                             <p class="blog-post-meta">January 5, 2025 <span>|</span> Process</p>
-                              <h4><a href="blog-post-template.html">5 Key Questions to Ask When Choosing an Architect</a></h4>
-                              <p class="blog-post-excerpt">Selecting the right architect is crucial. Ensure a successful partnership by asking these important questions during your initial consultations...</p>
-                             <a href="blog-post-template.html" class="read-more-link">Read More &rarr;</a>
-                         </div>
-                    </article>
-                     </div>
-
-                <nav class="pagination" aria-label="Blog Pagination">
-                    <span class="disabled">&laquo; Prev</span>
-                    <span class="current">1</span>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">Next &raquo;</a>
-                    </nav>
-
-            </div>
-        </section>
-
-         <section id="resource-library" class="section section-bg">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Resource Library</h2>
-                    <p>Download helpful guides, checklists, and tools for your architectural journey.</p>
-                </div>
-                <div class="resource-grid">
-                    <div class="resource-item">
-                        <span class="icon">&#xe94a;</span> <h4>Home Renovation Checklist</h4>
-                        <p>A comprehensive checklist to guide you through planning your next home renovation project.</p>
-                        <a href="#download-checklist" class="btn btn-secondary">Download PDF</a>
-                    </div>
-                    <div class="resource-item">
-                         <span class="icon">&#xe96c;</span> <h4>Sustainable Materials Guide</h4>
-                        <p>An overview of eco-friendly material options for residential and commercial construction.</p>
-                        <a href="#download-guide" class="btn btn-secondary">Download Guide</a>
-                    </div>
-                    <div class="resource-item">
-                         <span class="icon">&#xe9b8;</span> <h4>Webinar: Designing for Wellness</h4>
-                        <p>Watch our recorded webinar on incorporating wellness principles into architectural design.</p>
-                        <a href="#watch-webinar" class="btn btn-secondary">Watch Video</a>
-                    </div>
-                     <div class="resource-item">
-                        <span class="icon">&#xe91f;</span> <h4>Budget Planning Worksheet</h4>
-                        <p>A helpful template to assist you in planning and tracking your project budget effectively.</p>
-                        <a href="#download-worksheet" class="btn btn-secondary">Download Sheet</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
+    <main class="section" style="padding-top: 150px;">
         <div class="container">
-            <div class="footer-content">
-                 <div class="footer-column contact">
-                     <a href="index.html" class="footer-logo">Architect Co.</a>
-                    <ul class="footer-contact">
-                         <li><i>&#xe9b0;</i> 123 Architecture Lane, <br>Design City, DC 12345</li>
-                         <li><i>&#xe9b6;</i> <a href="tel:+15551234567">(555) 123-4567</a></li>
-                         <li><i>&#xe9a6;</i> <a href="mailto:info@architectco.com">info@architectco.com</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column nav">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-nav">
-                         <li><a href="index.html">Home</a></li>
-                         <li><a href="residential-design.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column social">
-                    <h4>Follow Us</h4>
-                    <ul class="social-links">
-                        <li><a href="#" aria-label="Facebook" title="Facebook">&#xe94d;</a></li>
-                        <li><a href="#" aria-label="Instagram" title="Instagram">&#xe98c;</a></li>
-                        <li><a href="#" aria-label="LinkedIn" title="LinkedIn">&#xe9a1;</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> Architect Co. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <h1 style="margin-bottom: 60px;">Journal</h1>
+            <div class="grid-3">
+
+        <div>
+            <a href="blog/heritage-zoning-roma-norte.html" style="border: none;">
+                <img src="img/locations/roma-norte-detail.png" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 20px;">
+                <p style="font-size: 0.8rem; color: #999; text-transform: uppercase;">October 12, 2025</p>
+                <h3 style="font-size: 1.5rem; margin: 10px 0;">Navigating Heritage Zoning in Roma Norte</h3>
+                <p style="font-size: 1rem; color: #555;">Why INBA protection isn't a death sentence for your renovation project. A guide to adaptive reuse in Catalogued properties.</p>
+            </a>
+        </div>
+    
+        <div>
+            <a href="blog/seismic-safety-guide.html" style="border: none;">
+                <img src="img/locations/juarez-detail.png" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 20px;">
+                <p style="font-size: 0.8rem; color: #999; text-transform: uppercase;">September 28, 2025</p>
+                <h3 style="font-size: 1.5rem; margin: 10px 0;">Seismic Safety: What Every Investor Needs to Know</h3>
+                <p style="font-size: 1rem; color: #555;">The 2026 Building Code update changed everything. How to ensure your Juarez or Roma investment is earthquake-proof.</p>
+            </a>
+        </div>
+    
+        <div>
+            <a href="blog/condesa-rooftop-roi.html" style="border: none;">
+                <img src="img/locations/condesa-lifestyle.png" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 20px;">
+                <p style="font-size: 0.8rem; color: #999; text-transform: uppercase;">November 5, 2025</p>
+                <h3 style="font-size: 1.5rem; margin: 10px 0;">The ROI of Rooftops in Condesa</h3>
+                <p style="font-size: 1rem; color: #555;">You can't build up, but you can build out. How activating the roof adds 30% to your property value.</p>
+            </a>
+        </div>
+    
             </div>
         </div>
-    </footer>
-
-    <script>
-        // Simple Mobile Navigation Toggle
-        const menuIcon = document.getElementById('menu-icon');
-        const navLinks = document.getElementById('nav-links');
-
-        menuIcon.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const isExpanded = navLinks.classList.contains('active');
-            menuIcon.setAttribute('aria-expanded', isExpanded);
-        });
-
-        menuIcon.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                navLinks.classList.toggle('active');
-                const isExpanded = navLinks.classList.contains('active');
-                menuIcon.setAttribute('aria-expanded', isExpanded);
-            }
-        });
-
-        navLinks.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A') {
-                if (window.innerWidth < 768) {
-                     navLinks.classList.remove('active');
-                     menuIcon.setAttribute('aria-expanded', 'false');
-                }
-            }
-        });
-
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-         // Basic JS for Filter Button Active State (Visual Only)
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(el => el.classList.remove('active'));
-                btn.classList.add('active');
-                console.log('Filtering blog by:', btn.getAttribute('data-filter')); // Placeholder
-                // Add actual blog filtering logic here if using JS
-            });
-        });
-
-    </script>
-
+    </main>
 </body>
 </html>

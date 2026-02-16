@@ -342,10 +342,48 @@ a:hover {
 
 @media (max-width: 768px) {
     .container { padding: 0 20px; }
-    h1 { font-size: 2.8rem; }
-    .intelligence-grid { grid-template-columns: 1fr; }
-    .swiss-list li { grid-template-columns: 1fr; gap: 5px; }
-    .modal-content { padding: 30px; margin: 20% auto; }
+    
+    /* Typography Scaling */
+    h1 { font-size: 2.8rem; margin-bottom: 1.5rem; }
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.5rem; }
+    
+    /* Force Stacking */
+    .grid-2, .grid-3, .grid-4, .content-block, .hero-content, .hero-home, .intelligence-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px;
+    }
+
+    /* Intelligence Grid Borders */
+    .intel-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        padding: 20px 0;
+    }
+
+    /* Hero Adjustments */
+    .hero, .hero-home {
+        padding-top: 100px;
+        min-height: auto;
+        height: auto;
+    }
+    .hero-image, .hero-home-image {
+        height: 300px;
+        order: -1; /* Image first on mobile */
+    }
+    .hero-home-text {
+        border-right: none;
+        padding: 40px 20px;
+    }
+
+    /* Lists */
+    .swiss-list li { 
+        grid-template-columns: 1fr; 
+        gap: 5px; 
+    }
+
+    /* Modal */
+    .modal-content { padding: 30px; margin: 20% auto; width: 95%; }
 }
 
 /* Footer - Swiss */

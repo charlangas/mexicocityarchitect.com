@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Navigating Heritage Zoning in Roma Norte",
+    "slug": "heritage-zoning-roma-norte",
+    "date": "October 12, 2025",
+    "excerpt": "Why INBA protection isn't a death sentence for your renovation project. A guide to adaptive reuse in Catalogued properties.",
+    "content": "<p>Roma Norte is defined by its architectural heritage. But for investors, the 'Catalogued Property' designation can feel like a red flag. It shouldn't.</p><h3>Understanding INBA vs. SEDUVI</h3><p>The first step is distinguishing between artistic value (INBA) and urban value (SEDUVI). INBA cares about the facade and historical fabric; SEDUVI cares about usage and density.</p><h3>The Strategy: Invisible Intervention</h3><p>Our approach at Talacha is to restore the facade to museum quality while modernizing the core. We use steel framing to reinforce the structure internally, allowing for open-plan layouts without touching the historic masonry.</p>",
+    "related_location": "roma-norte",
+    "image": "../img/locations/roma-norte-detail.png"
+  },
+  {
+    "title": "Seismic Safety: What Every Investor Needs to Know",
+    "slug": "seismic-safety-guide",
+    "date": "September 28, 2025",
+    "excerpt": "The 2026 Building Code update changed everything. How to ensure your Juarez or Roma investment is earthquake-proof.",
+    "content": "<p>Mexico City is a seismic zone. There is no getting around it. But the risk is not uniform. The 'Lakebed Zone' (Roma, Juarez, Condesa) amplifies waves, while the 'Hill Zone' (Lomas, Pedregal) is rock solid.</p><h3>The Retrofit Imperative</h3><p>Buying a 1900s mansion in Juarez? It likely needs a structural retrofit. We partner with top engineers to install viscous dampers or shear walls. This isn't just about safety; it's about asset value. A certified seismic-safe building commands a 15% premium.</p>",
+    "related_location": "juarez",
+    "image": "../img/locations/juarez-detail.png"
+  },
+  {
+    "title": "The ROI of Rooftops in Condesa",
+    "slug": "condesa-rooftop-roi",
+    "date": "November 5, 2025",
+    "excerpt": "You can't build up, but you can build out. How activating the roof adds 30% to your property value.",
+    "content": "<p>In Condesa, zoning laws strictly limit building heights to preserve the Art Deco scale. This makes the roof the most valuable underutilized asset in the neighborhood.</p><h3>The Legal Path</h3><p>While you often cannot add a 'structure' (walls and roof), you can add a 'light structure' (pergola) and decking. By turning a tar-paper roof into a lush garden with a wet bar, you effectively add a second living room.</p>",
+    "related_location": "condesa",
+    "image": "../img/locations/condesa-lifestyle.png"
+  }
+]
