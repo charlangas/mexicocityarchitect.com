@@ -37,7 +37,7 @@
             <ul class="nav-links">
                 <li><a href="../index.html">Work</a></li>
                 <li><a href="../about.html">Studio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="open-modal">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -50,7 +50,7 @@
                     <h4>Architecture Guide 2026</h4>
                     <h1>Renovation & Construction: Del Valle</h1>
                     <p>Turnkey renovation services for Del Valle. We manage the permits, the timeline, and the quality—so you don't have to.</p>
-                    <a href="#contact" class="btn" style="margin-top: 40px;">Start Project</a>
+                    <button class="btn open-modal" style="margin-top: 40px;">Start Project</button>
                 </div>
                 <!-- IMAGE 1: HERO -->
                 <img src="../img/locations/del-valle-hero.png" alt="Architecture in Del Valle" class="hero-image">
@@ -101,7 +101,7 @@
                 <!-- Main Narrative -->
                 <div class="main-text">
                     <h2>Living & Building in Del Valle</h2>
-                    <p>Del Valle is the '15-minute city' realized. Everything you need is within walking distance. It is less pretentious than Polanco and less chaotic than Roma. It's the preferred choice for families who want safety and space without the Lomas price tag. It boasts some of the best parks in the city (Parque de los Venados, Parque Arboledas) which are always full of children and dogs. The housing stock is mostly vertical—high-quality apartments built in the 70s, 80s, and 90s. It is not 'trendy' in the Instagram sense, but it is incredibly functional. It has excellent public transport connectivity and is generally considered one of the safest zones in the central city.</p>
+                    <p>Del Valle is the '15-minute city' realized. Everything you need is within walking distance. It is less pretentious than Polanco and less chaotic than Roma. It's the preferred choice for families who want safety and space without the Lomas price tag. It boasts some of the best parks in the city (Parque de los Venados, Parque Arboledas) which are always full of children and dogs. The housing stock is mostly vertical—high-quality apartments built in the 70s, 80s, and 90s. It is not 'trendy' in the Instagram sense, but it is incredibly functional. It has excellent public transport connectivity and is generally considered one of the safest zones in the central city. <br><br><strong>Service Perspective:</strong> Renovating in Del Valle is an act of archaeology. Every wall we open reveals layers of history—sometimes beautiful (original frescoes), sometimes challenging (old plumbing). We love the process of restoring these layers.</p>
                     
                     <!-- IMAGE 3: ARCHITECTURAL DETAIL -->
                     <img src="../img/locations/del-valle-detail.png" alt="Architectural Detail of Del Valle" style="width: 100%; height: 300px; object-fit: cover; margin: 40px 0;">
@@ -110,7 +110,7 @@
                     <p>Developed in the mid-20th century, it has a mix of functionalist houses and 1980s apartment blocks. It was originally a zone of country houses and orchards, which explains the width of its avenues and the abundance of trees. It experienced rapid verticalization in the late 20th century, becoming the quintessential middle-class neighborhood of CDMX.</p>
 
                     <h3>The Investment Outlook</h3>
-                    <p>High liquidity. Del Valle apartments sell and rent very fast. It is a volume game. Because it is so central and livable, there is a constant stream of demand from professionals and young families. It is a low-risk, medium-return market. The opportunity lies in renovation—buying tired 1980s apartments and updating them for the modern market.</p>
+                    <p>High liquidity. Del Valle apartments sell and rent very fast. It is a volume game. Because it is so central and livable, there is a constant stream of demand from professionals and young families. It is a low-risk, medium-return market. The opportunity lies in renovation—buying tired 1980s apartments and updating them for the modern market. <br><br><strong>Market Insight:</strong> Renovation offers the highest ROI in Del Valle. Buying a 'fixer-upper' and updating systems/finishes generates significantly more equity than buying new construction.</p>
                     <div style="background: #f4f4f4; padding: 30px; border-left: 4px solid #000; margin: 40px 0;">
                         <strong>Insider Tip:</strong> The 'Flipping' Sweet Spot. Buy a dated 1990s apartment and do a cosmetic update for a reliable margin.
                     </div>
@@ -158,11 +158,11 @@
             <div class="container grid-2">
                 <div>
                     <h2>The Challenge</h2>
-                    <p style="font-size: 1.5rem;">Construction Logistics. Most projects are in active apartment buildings.</p>
+                    <p style="font-size: 1.5rem;">The logistics of renovation in Del Valle are tough. Narrow streets make debris removal difficult, and noise restrictions are strict in these dense residential zones. <br>Furthermore, construction logistics. most projects are in active apartment buildings.</p>
                 </div>
                 <div>
                     <h2>Our Solution</h2>
-                    <p>We excel at 'Neighbor Diplomacy' to minimize friction with HOAs.</p>
+                    <p>Our construction teams are trained in 'Low-Impact Renovation.' We use specialized smaller trucks for debris and strictly adhere to work hours to maintain neighborly relations. We excel at 'Neighbor Diplomacy' to minimize friction with HOAs.</p>
                     <p>Led by Erik Martínez (AIA, NCARB), formerly of SHoP Architects NYC, we navigate these complexities with precision.</p>
                 </div>
             </div>
@@ -195,7 +195,7 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
+        <!-- CONTACT (Static Section - now redundant with modal, but good for SEO/Footer anchor) -->
         <section id="contact" class="section" style="background: #000; color: #fff;">
             <div class="container grid-2">
                 <div>
@@ -208,7 +208,9 @@
                     </ul>
                 </div>
                 <div>
-                    <form action="#" method="POST" style="display: grid; gap: 20px;">
+                    <!-- Static form for non-JS users / fallback -->
+                    <form name="lead-form-static" method="POST" data-netlify="true" style="display: grid; gap: 20px;">
+                        <input type="hidden" name="form-name" value="lead-form-static" />
                         <input type="hidden" name="source_page" value="renovation-contractors-del-valle">
                         <input type="text" name="name" placeholder="NAME" required style="padding: 20px; background: transparent; border: 1px solid #333; color: #fff; font-family: var(--font-main);">
                         <input type="email" name="email" placeholder="EMAIL" required style="padding: 20px; background: transparent; border: 1px solid #333; color: #fff; font-family: var(--font-main);">
@@ -223,7 +225,7 @@
         <section class="section">
             <div class="container">
                 <h2 style="margin-bottom: 40px;">Explore Nearby Zones</h2>
-                <ul class="swiss-list" style="border-top: none;"><li><a href="renovation-contractors-narvarte.html">Architecture in Narvarte</a><span>Explore Zone &rarr;</span></li><li><a href="renovation-contractors-roma-sur.html">Architecture in Roma Sur</a><span>Explore Zone &rarr;</span></li><li><a href="renovation-contractors-coyoacan.html">Architecture in Coyoacán</a><span>Explore Zone &rarr;</span></li></ul>
+                <ul class="swiss-list" style="border-top: none;"><li><a href="renovation-contractors-narvarte.html">Renovation Contractors in Narvarte</a><span>Explore Zone &rarr;</span></li><li><a href="renovation-contractors-roma-sur.html">Renovation Contractors in Roma Sur</a><span>Explore Zone &rarr;</span></li><li><a href="renovation-contractors-coyoacan.html">Renovation Contractors in Coyoacán</a><span>Explore Zone &rarr;</span></li></ul>
             </div>
         </section>
 
@@ -259,6 +261,53 @@
             </div>
         </div>
     </footer>
+
+    <!-- LEAD MODAL -->
+    <div id="lead-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 style="margin-bottom: 10px;">Request Feasibility Study</h3>
+            <p style="margin-bottom: 30px; font-size: 0.9rem;">Tell us about your project in Del Valle.</p>
+            <form name="lead-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="lead-form" />
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="source_page" id="modal-source" value="">
+                
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone (Optional)">
+                <textarea name="message" placeholder="Project Details..." required></textarea>
+                
+                <button type="submit" class="btn" style="width: 100%;">Get Free Assessment</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        const modal = document.getElementById('lead-modal');
+        const btns = document.querySelectorAll('.open-modal');
+        const span = document.querySelector('.close-modal');
+        const sourceInput = document.getElementById('modal-source');
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                sourceInput.value = window.location.pathname; // Capture Source Page
+                modal.style.display = 'block';
+            });
+        });
+
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>

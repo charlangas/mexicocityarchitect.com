@@ -37,7 +37,7 @@
             <ul class="nav-links">
                 <li><a href="../index.html">Work</a></li>
                 <li><a href="../about.html">Studio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="open-modal">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -50,7 +50,7 @@
                     <h4>Architecture Guide 2026</h4>
                     <h1>Commercial Architecture: Roma Norte</h1>
                     <p>From boutique retail to corporate HQs. We design high-performance spaces in Roma Norte that elevate your brand and workflow.</p>
-                    <a href="#contact" class="btn" style="margin-top: 40px;">Start Project</a>
+                    <button class="btn open-modal" style="margin-top: 40px;">Start Project</button>
                 </div>
                 <!-- IMAGE 1: HERO -->
                 <img src="../img/locations/roma-norte-hero.png" alt="Architecture in Roma Norte" class="hero-image">
@@ -101,7 +101,7 @@
                 <!-- Main Narrative -->
                 <div class="main-text">
                     <h2>Living & Building in Roma Norte</h2>
-                    <p>Roma Norte is kinetic. It feels like Brooklyn's Williamsburg or Berlin's Kreuzberg, but with a distinctly Mexican chaotic charm. The streets are a mix of crumbling 1900s mansions, sleek modern lofts, and street art. The lifestyle is social and culinary. This is where the best chefs open their experimental concepts. It attracts a heavy concentration of digital nomads, startup founders, and the creative class. Life happens on the street here—in the plazas (Rio de Janeiro, Luis Cabrera) and on the medians of Alvaro Obregón. It is louder and busier than Condesa, but offers a more intense cultural experience. The energy is youthful and progressive, making it the preferred landing spot for young expats and creatives moving to the city.</p>
+                    <p>Roma Norte is kinetic. It feels like Brooklyn's Williamsburg or Berlin's Kreuzberg, but with a distinctly Mexican chaotic charm. The streets are a mix of crumbling 1900s mansions, sleek modern lofts, and street art. The lifestyle is social and culinary. This is where the best chefs open their experimental concepts. It attracts a heavy concentration of digital nomads, startup founders, and the creative class. Life happens on the street here—in the plazas (Rio de Janeiro, Luis Cabrera) and on the medians of Alvaro Obregón. It is louder and busier than Condesa, but offers a more intense cultural experience. The energy is youthful and progressive, making it the preferred landing spot for young expats and creatives moving to the city. <br><br><strong>Service Perspective:</strong> For businesses, Roma Norte offers a unique branding opportunity. A headquarters here signals creativity and sophistication. It attracts talent who want to work in a vibrant, walkable district rather than a sterile office park.</p>
                     
                     <!-- IMAGE 3: ARCHITECTURAL DETAIL -->
                     <img src="../img/locations/roma-norte-detail.png" alt="Architectural Detail of Roma Norte" style="width: 100%; height: 300px; object-fit: cover; margin: 40px 0;">
@@ -110,7 +110,7 @@
                     <p>Developed during the regime of Porfirio Díaz (late 19th century) as an aristocratic enclave, Roma features French-style mansions and wide boulevards. It fell into disrepair after the 1985 earthquake but has been spectacularly reborn in the last 15 years. Alfonso Cuarón's movie 'Roma' captures its 1970s era, but today it is fully gentrified and serves as the cultural heart of the modern city. The juxtaposition of Beaux-Arts mansions with modern street art and industrial lofts tells the story of a neighborhood that honors its past while aggressively inventing its future.</p>
 
                     <h3>The Investment Outlook</h3>
-                    <p>Explosive growth. It is the top destination for digital nomads. Commercial real estate here commands a massive premium. Residential appreciation has been massive. It is the #1 destination for foreign remote workers, ensuring high occupancy for rentals. While some argue it is nearing a price ceiling, the constant influx of international demand suggests continued growth, especially for unique, design-forward properties that stand out in the crowded Airbnb market.</p>
+                    <p>Explosive growth. It is the top destination for digital nomads. Commercial real estate here commands a massive premium. Residential appreciation has been massive. It is the #1 destination for foreign remote workers, ensuring high occupancy for rentals. While some argue it is nearing a price ceiling, the constant influx of international demand suggests continued growth, especially for unique, design-forward properties that stand out in the crowded Airbnb market. <br><br><strong>Market Insight:</strong> Commercial real estate in Roma Norte commands a premium due to high foot traffic and prestige. Converting a residential property to office use (where permitted) can double the rental yield.</p>
                     <div style="background: #f4f4f4; padding: 30px; border-left: 4px solid #000; margin: 40px 0;">
                         <strong>Insider Tip:</strong> Look for 'Infill' opportunities—ugly 1980s buildings nestled between historic mansions. These have no heritage protection, meaning you can demolish or radically alter them.
                     </div>
@@ -158,11 +158,11 @@
             <div class="container grid-2">
                 <div>
                     <h2>The Challenge</h2>
-                    <p style="font-size: 1.5rem;">Catalogued properties (INBA) are everywhere. Also, the soil here is softer (lakebed), so seismic retrofitting is critical.</p>
+                    <p style="font-size: 1.5rem;">The critical challenge for commercial projects here is 'Uso de Suelo' (Land Use) rights. Many properties are strictly residential, and obtaining commercial zoning is complex. <br>Furthermore, catalogued properties (inba) are everywhere. also, the soil here is softer (lakebed), so seismic retrofitting is critical.</p>
                 </div>
                 <div>
                     <h2>Our Solution</h2>
-                    <p>We are experts in seismic structural reinforcement that respects heritage architecture.</p>
+                    <p>We conduct a rigorous zoning feasibility study ('Factibilidad de Uso de Suelo') before any design work begins, ensuring your business can legally operate in the chosen property. We are experts in seismic structural reinforcement that respects heritage architecture.</p>
                     <p>Led by Erik Martínez (AIA, NCARB), formerly of SHoP Architects NYC, we navigate these complexities with precision.</p>
                 </div>
             </div>
@@ -195,7 +195,7 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
+        <!-- CONTACT (Static Section - now redundant with modal, but good for SEO/Footer anchor) -->
         <section id="contact" class="section" style="background: #000; color: #fff;">
             <div class="container grid-2">
                 <div>
@@ -208,7 +208,9 @@
                     </ul>
                 </div>
                 <div>
-                    <form action="#" method="POST" style="display: grid; gap: 20px;">
+                    <!-- Static form for non-JS users / fallback -->
+                    <form name="lead-form-static" method="POST" data-netlify="true" style="display: grid; gap: 20px;">
+                        <input type="hidden" name="form-name" value="lead-form-static" />
                         <input type="hidden" name="source_page" value="commercial-architects-roma-norte">
                         <input type="text" name="name" placeholder="NAME" required style="padding: 20px; background: transparent; border: 1px solid #333; color: #fff; font-family: var(--font-main);">
                         <input type="email" name="email" placeholder="EMAIL" required style="padding: 20px; background: transparent; border: 1px solid #333; color: #fff; font-family: var(--font-main);">
@@ -223,7 +225,7 @@
         <section class="section">
             <div class="container">
                 <h2 style="margin-bottom: 40px;">Explore Nearby Zones</h2>
-                <ul class="swiss-list" style="border-top: none;"><li><a href="commercial-architects-roma-sur.html">Architecture in Roma Sur</a><span>Explore Zone &rarr;</span></li><li><a href="commercial-architects-condesa.html">Architecture in Condesa</a><span>Explore Zone &rarr;</span></li><li><a href="commercial-architects-juarez.html">Architecture in Juárez</a><span>Explore Zone &rarr;</span></li></ul>
+                <ul class="swiss-list" style="border-top: none;"><li><a href="commercial-architects-roma-sur.html">Commercial Architects in Roma Sur</a><span>Explore Zone &rarr;</span></li><li><a href="commercial-architects-condesa.html">Commercial Architects in Condesa</a><span>Explore Zone &rarr;</span></li><li><a href="commercial-architects-juarez.html">Commercial Architects in Juárez</a><span>Explore Zone &rarr;</span></li></ul>
             </div>
         </section>
 
@@ -259,6 +261,53 @@
             </div>
         </div>
     </footer>
+
+    <!-- LEAD MODAL -->
+    <div id="lead-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 style="margin-bottom: 10px;">Request Feasibility Study</h3>
+            <p style="margin-bottom: 30px; font-size: 0.9rem;">Tell us about your project in Roma Norte.</p>
+            <form name="lead-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="lead-form" />
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="source_page" id="modal-source" value="">
+                
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone (Optional)">
+                <textarea name="message" placeholder="Project Details..." required></textarea>
+                
+                <button type="submit" class="btn" style="width: 100%;">Get Free Assessment</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        const modal = document.getElementById('lead-modal');
+        const btns = document.querySelectorAll('.open-modal');
+        const span = document.querySelector('.close-modal');
+        const sourceInput = document.getElementById('modal-source');
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                sourceInput.value = window.location.pathname; // Capture Source Page
+                modal.style.display = 'block';
+            });
+        });
+
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>

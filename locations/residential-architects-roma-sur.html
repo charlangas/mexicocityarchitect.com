@@ -37,7 +37,7 @@
             <ul class="nav-links">
                 <li><a href="../index.html">Work</a></li>
                 <li><a href="../about.html">Studio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="open-modal">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -50,7 +50,7 @@
                     <h4>Architecture Guide 2026</h4>
                     <h1>Residential Design Studio: Roma Sur</h1>
                     <p>Your home in Roma Sur should be a sanctuary. We specialize in navigating local constraints to build modern, light-filled residences.</p>
-                    <a href="#contact" class="btn" style="margin-top: 40px;">Start Project</a>
+                    <button class="btn open-modal" style="margin-top: 40px;">Start Project</button>
                 </div>
                 <!-- IMAGE 1: HERO -->
                 <img src="../img/locations/roma-sur-hero.png" alt="Architecture in Roma Sur" class="hero-image">
@@ -101,7 +101,7 @@
                 <!-- Main Narrative -->
                 <div class="main-text">
                     <h2>Living & Building in Roma Sur</h2>
-                    <p>If Roma Norte is for partying, Roma Sur is for living. It feels like the Mexico City of 20 years ago—traditional, neighborly, and slow-paced. It is quieter, greener, and significantly more residential. The lifestyle is about local markets (Mercado de Medellín) and home cooking. Residents here are a mix of original families who have lived here for generations and young professionals seeking the Roma location without the Norte noise. You will find 'Tienditas' (corner stores) run by the same families for decades. It is becoming the refuge for those who love the aesthetic of the area but prioritize sleep and community over nightlife. The connectivity is excellent, with easy access to the Metrobus and major avenues, making it a practical choice for commuters.</p>
+                    <p>If Roma Norte is for partying, Roma Sur is for living. It feels like the Mexico City of 20 years ago—traditional, neighborly, and slow-paced. It is quieter, greener, and significantly more residential. The lifestyle is about local markets (Mercado de Medellín) and home cooking. Residents here are a mix of original families who have lived here for generations and young professionals seeking the Roma location without the Norte noise. You will find 'Tienditas' (corner stores) run by the same families for decades. It is becoming the refuge for those who love the aesthetic of the area but prioritize sleep and community over nightlife. The connectivity is excellent, with easy access to the Metrobus and major avenues, making it a practical choice for commuters. <br><br><strong>Service Perspective:</strong> Designing a home in Roma Sur means creating a sanctuary. The density of the neighborhood requires creative solutions for privacy and acoustics. We focus on internal courtyards and sound-insulated glazing to create peace within the urban energy.</p>
                     
                     <!-- IMAGE 3: ARCHITECTURAL DETAIL -->
                     <img src="../img/locations/roma-sur-detail.png" alt="Architectural Detail of Roma Sur" style="width: 100%; height: 300px; object-fit: cover; margin: 40px 0;">
@@ -110,7 +110,7 @@
                     <p>Developed slightly later than the Norte, Roma Sur features a mix of Art Deco, Californian Colonial, and Mid-Century Functionalist architecture. It was traditionally a middle-class stronghold and has resisted the extreme commercialization of its northern neighbor. The urban layout is similar—a grid of tree-lined streets—but the density is lower, with more single-family homes remaining intact rather than being converted into apartment blocks.</p>
 
                     <h3>The Investment Outlook</h3>
-                    <p>Roma Sur is the 'Value Play.' Prices are 20-30% lower than Norte, but the appreciation curve is steeper as demand spills over. It is poised for significant growth as the next logical step for gentrification. Investors who buy here are betting on the inevitable southward expansion of the 'cool' zone. It offers a better entry point for those priced out of Norte or Condesa, with arguably higher upside potential in the next 5-10 years.</p>
+                    <p>Roma Sur is the 'Value Play.' Prices are 20-30% lower than Norte, but the appreciation curve is steeper as demand spills over. It is poised for significant growth as the next logical step for gentrification. Investors who buy here are betting on the inevitable southward expansion of the 'cool' zone. It offers a better entry point for those priced out of Norte or Condesa, with arguably higher upside potential in the next 5-10 years. <br><br><strong>Market Insight:</strong> Residential properties in Roma Sur are the most resilient asset class. Families prioritize this zone for its walkability and parks, ensuring that a well-designed home here will always have a buyer.</p>
                     <div style="background: #f4f4f4; padding: 30px; border-left: 4px solid #000; margin: 40px 0;">
                         <strong>Insider Tip:</strong> Buy single-family homes here. Adding a third story (studio/roof garden) is often permitted and creates massive equity.
                     </div>
@@ -158,11 +158,11 @@
             <div class="container grid-2">
                 <div>
                     <h2>The Challenge</h2>
-                    <p style="font-size: 1.5rem;">Lot sizes are often smaller and layouts in 1950s houses can be compartmentalized and dark.</p>
+                    <p style="font-size: 1.5rem;">For residential projects, the main hurdle is often maximizing square footage within the strict 'Area Libre' (Free Area) requirements of the zoning code. <br>Furthermore, lot sizes are often smaller and layouts in 1950s houses can be compartmentalized and dark.</p>
                 </div>
                 <div>
                     <h2>Our Solution</h2>
-                    <p>Our design team specializes in 'Light Surgery'—strategic demolition of internal walls and adding skylights.</p>
+                    <p>Our residential team is expert at utilizing roof terraces and light wells to count towards open space requirements while expanding the usable living area. Our design team specializes in 'Light Surgery'—strategic demolition of internal walls and adding skylights.</p>
                     <p>Led by Erik Martínez (AIA, NCARB), formerly of SHoP Architects NYC, we navigate these complexities with precision.</p>
                 </div>
             </div>
@@ -195,7 +195,7 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
+        <!-- CONTACT (Static Section - now redundant with modal, but good for SEO/Footer anchor) -->
         <section id="contact" class="section" style="background: #000; color: #fff;">
             <div class="container grid-2">
                 <div>
@@ -208,7 +208,9 @@
                     </ul>
                 </div>
                 <div>
-                    <form action="#" method="POST" style="display: grid; gap: 20px;">
+                    <!-- Static form for non-JS users / fallback -->
+                    <form name="lead-form-static" method="POST" data-netlify="true" style="display: grid; gap: 20px;">
+                        <input type="hidden" name="form-name" value="lead-form-static" />
                         <input type="hidden" name="source_page" value="residential-architects-roma-sur">
                         <input type="text" name="name" placeholder="NAME" required style="padding: 20px; background: transparent; border: 1px solid #333; color: #fff; font-family: var(--font-main);">
                         <input type="email" name="email" placeholder="EMAIL" required style="padding: 20px; background: transparent; border: 1px solid #333; color: #fff; font-family: var(--font-main);">
@@ -223,7 +225,7 @@
         <section class="section">
             <div class="container">
                 <h2 style="margin-bottom: 40px;">Explore Nearby Zones</h2>
-                <ul class="swiss-list" style="border-top: none;"><li><a href="residential-architects-roma-norte.html">Architecture in Roma Norte</a><span>Explore Zone &rarr;</span></li><li><a href="residential-architects-del-valle.html">Architecture in Del Valle</a><span>Explore Zone &rarr;</span></li><li><a href="residential-architects-narvarte.html">Architecture in Narvarte</a><span>Explore Zone &rarr;</span></li></ul>
+                <ul class="swiss-list" style="border-top: none;"><li><a href="residential-architects-roma-norte.html">Residential Architects in Roma Norte</a><span>Explore Zone &rarr;</span></li><li><a href="residential-architects-del-valle.html">Residential Architects in Del Valle</a><span>Explore Zone &rarr;</span></li><li><a href="residential-architects-narvarte.html">Residential Architects in Narvarte</a><span>Explore Zone &rarr;</span></li></ul>
             </div>
         </section>
 
@@ -259,6 +261,53 @@
             </div>
         </div>
     </footer>
+
+    <!-- LEAD MODAL -->
+    <div id="lead-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 style="margin-bottom: 10px;">Request Feasibility Study</h3>
+            <p style="margin-bottom: 30px; font-size: 0.9rem;">Tell us about your project in Roma Sur.</p>
+            <form name="lead-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="lead-form" />
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="source_page" id="modal-source" value="">
+                
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone (Optional)">
+                <textarea name="message" placeholder="Project Details..." required></textarea>
+                
+                <button type="submit" class="btn" style="width: 100%;">Get Free Assessment</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        const modal = document.getElementById('lead-modal');
+        const btns = document.querySelectorAll('.open-modal');
+        const span = document.querySelector('.close-modal');
+        const sourceInput = document.getElementById('modal-source');
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                sourceInput.value = window.location.pathname; // Capture Source Page
+                modal.style.display = 'block';
+            });
+        });
+
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>

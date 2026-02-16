@@ -1,0 +1,32 @@
+{
+  "architects": {
+    "vibe_modifier": "As architects, we approach {{location_name}} as a canvas of historical stratification. The challenge is not just to build, but to weave new structures into this dense urban fabric without disrupting its rhythm.",
+    "investment_modifier": "From an architectural perspective, the value in {{location_name}} lies in 'good bones.' Properties here often have generous ceiling heights and solid masonry that simply cannot be replicated in new construction.",
+    "challenge_modifier": "Our primary architectural challenge in {{location_name}} is balancing the client's desire for modern openness with the structural realities of the local soil and seismic codes.",
+    "solution_modifier": "We use lightweight steel framing and advanced glazing to bring light into these structures while reinforcing their seismic resistance."
+  },
+  "residential-architects": {
+    "vibe_modifier": "Designing a home in {{location_name}} means creating a sanctuary. The density of the neighborhood requires creative solutions for privacy and acoustics. We focus on internal courtyards and sound-insulated glazing to create peace within the urban energy.",
+    "investment_modifier": "Residential properties in {{location_name}} are the most resilient asset class. Families prioritize this zone for its walkability and parks, ensuring that a well-designed home here will always have a buyer.",
+    "challenge_modifier": "For residential projects, the main hurdle is often maximizing square footage within the strict 'Area Libre' (Free Area) requirements of the zoning code.",
+    "solution_modifier": "Our residential team is expert at utilizing roof terraces and light wells to count towards open space requirements while expanding the usable living area."
+  },
+  "commercial-architects": {
+    "vibe_modifier": "For businesses, {{location_name}} offers a unique branding opportunity. A headquarters here signals creativity and sophistication. It attracts talent who want to work in a vibrant, walkable district rather than a sterile office park.",
+    "investment_modifier": "Commercial real estate in {{location_name}} commands a premium due to high foot traffic and prestige. Converting a residential property to office use (where permitted) can double the rental yield.",
+    "challenge_modifier": "The critical challenge for commercial projects here is 'Uso de Suelo' (Land Use) rights. Many properties are strictly residential, and obtaining commercial zoning is complex.",
+    "solution_modifier": "We conduct a rigorous zoning feasibility study ('Factibilidad de Uso de Suelo') before any design work begins, ensuring your business can legally operate in the chosen property."
+  },
+  "renovation-contractors": {
+    "vibe_modifier": "Renovating in {{location_name}} is an act of archaeology. Every wall we open reveals layers of history—sometimes beautiful (original frescoes), sometimes challenging (old plumbing). We love the process of restoring these layers.",
+    "investment_modifier": "Renovation offers the highest ROI in {{location_name}}. Buying a 'fixer-upper' and updating systems/finishes generates significantly more equity than buying new construction.",
+    "challenge_modifier": "The logistics of renovation in {{location_name}} are tough. Narrow streets make debris removal difficult, and noise restrictions are strict in these dense residential zones.",
+    "solution_modifier": "Our construction teams are trained in 'Low-Impact Renovation.' We use specialized smaller trucks for debris and strictly adhere to work hours to maintain neighborly relations."
+  },
+  "interior-design": {
+    "vibe_modifier": "Interiors in {{location_name}} demand a dialogue with the exterior. We bring the colors and textures of the neighborhood—volcanic stone, jacaranda purple, terracotta—inside to create a sense of place.",
+    "investment_modifier": "High-end interior design is the differentiator in {{location_name}}'s competitive rental market. A unit with bespoke joinery and lighting rents for 30-40% more than a standard white-box apartment.",
+    "challenge_modifier": "The challenge is often lighting. Older buildings in {{location_name}} can be deep and dark. Bringing light into the core of the floorplate is our primary design objective.",
+    "solution_modifier": "We use reflective materials, strategic mirrors, and warm 2700K lighting schemes to make even ground-floor apartments feel airy and luminous."
+  }
+}

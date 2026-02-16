@@ -28,11 +28,7 @@
         }
         .hero-home-image {
             background: url('img/portfolio-temixco.jpg') center/cover no-repeat;
-            /* filter: grayscale(100%); REMOVED */
             transition: filter 0.5s;
-        }
-        .hero-home-image:hover {
-            filter: grayscale(0%);
         }
         .ticker-tape {
             border-bottom: 1px solid #000;
@@ -66,7 +62,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Work</a></li>
                 <li><a href="about.html">Studio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="open-modal">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -80,7 +76,7 @@
                     Talacha is the studio of Erik Martínez, AIA, NCARB. We bring 20 years of NYC skyscraper experience to boutique projects in Mexico City.
                 </p>
                 <div style="margin-top: 50px;">
-                    <a href="#contact" class="btn">Start Your Project</a>
+                    <button class="btn open-modal">Start Your Project</button>
                 </div>
             </div>
             <div class="hero-home-image"></div>
@@ -94,7 +90,7 @@
                 <span class="ticker-item">World Architecture Festival Shortlist</span>
                 <span class="ticker-item">Top 40 Under 40 Architects</span>
                 <span class="ticker-item">Former SHoP Architects Senior Associate</span>
-                <span class="ticker-item">Featured in Architectural Digest</span> <!-- Repeat for loop -->
+                <span class="ticker-item">Featured in Architectural Digest</span>
                 <span class="ticker-item">Featured in Dezeen</span>
                 <span class="ticker-item">World Architecture Festival Shortlist</span>
             </div>
@@ -143,7 +139,7 @@
             </div>
         </section>
 
-        <!-- LOCATIONS LINKS (SEO SPIDERWEB) -->
+        <!-- LOCATIONS LINKS -->
         <section class="section">
             <div class="container">
                 <h2>Building in CDMX?</h2>
@@ -201,6 +197,53 @@
             </div>
         </div>
     </footer>
+
+    <!-- LEAD MODAL -->
+    <div id="lead-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 style="margin-bottom: 10px;">Request Consultation</h3>
+            <p style="margin-bottom: 30px; font-size: 0.9rem;">Tell us about your project. We'll respond within 24 hours.</p>
+            <form name="lead-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="lead-form" />
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="source_page" id="modal-source" value="">
+                
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone (Optional)">
+                <textarea name="message" placeholder="Project Details (Location, Size, Type)..." required></textarea>
+                
+                <button type="submit" class="btn" style="width: 100%;">Send Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        const modal = document.getElementById('lead-modal');
+        const btns = document.querySelectorAll('.open-modal');
+        const span = document.querySelector('.close-modal');
+        const sourceInput = document.getElementById('modal-source');
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                sourceInput.value = window.location.pathname; // Capture Source Page
+                modal.style.display = 'block';
+            });
+        });
+
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>

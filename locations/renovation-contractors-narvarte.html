@@ -37,7 +37,7 @@
             <ul class="nav-links">
                 <li><a href="../index.html">Work</a></li>
                 <li><a href="../about.html">Studio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="open-modal">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -50,7 +50,7 @@
                     <h4>Architecture Guide 2026</h4>
                     <h1>Renovation & Construction: Narvarte</h1>
                     <p>Turnkey renovation services for Narvarte. We manage the permits, the timeline, and the quality—so you don't have to.</p>
-                    <a href="#contact" class="btn" style="margin-top: 40px;">Start Project</a>
+                    <button class="btn open-modal" style="margin-top: 40px;">Start Project</button>
                 </div>
                 <!-- IMAGE 1: HERO -->
                 <img src="../img/locations/narvarte-hero.png" alt="Architecture in Narvarte" class="hero-image">
@@ -101,7 +101,7 @@
                 <!-- Main Narrative -->
                 <div class="main-text">
                     <h2>Living & Building in Narvarte</h2>
-                    <p>Narvarte feels like a 1950s time capsule. Wide streets with palm trees and a relaxed pace. It has the best street food scene in the city. It is attracting the creative spillover from Roma/Condesa. It's hip without trying too hard. The residents are a diverse mix of old-timers, young creatives, and families. It feels more 'Mexican' and less 'International' than Roma, which is part of its charm. The street life is vibrant, with taco stands, cafes, and cantinas active until late. It offers a high quality of life at a price point that is still accessible compared to its western neighbors.</p>
+                    <p>Narvarte feels like a 1950s time capsule. Wide streets with palm trees and a relaxed pace. It has the best street food scene in the city. It is attracting the creative spillover from Roma/Condesa. It's hip without trying too hard. The residents are a diverse mix of old-timers, young creatives, and families. It feels more 'Mexican' and less 'International' than Roma, which is part of its charm. The street life is vibrant, with taco stands, cafes, and cantinas active until late. It offers a high quality of life at a price point that is still accessible compared to its western neighbors. <br><br><strong>Service Perspective:</strong> Renovating in Narvarte is an act of archaeology. Every wall we open reveals layers of history—sometimes beautiful (original frescoes), sometimes challenging (old plumbing). We love the process of restoring these layers.</p>
                     
                     <!-- IMAGE 3: ARCHITECTURAL DETAIL -->
                     <img src="../img/locations/narvarte-detail.png" alt="Architectural Detail of Narvarte" style="width: 100%; height: 300px; object-fit: cover; margin: 40px 0;">
@@ -110,7 +110,7 @@
                     <p>Developed in the 1940s and 50s, Narvarte is a museum of 'Functionalist' and 'Streamline Moderne' architecture. You see rounded corners, nautical windows, and mosaic details everywhere. It was designed as a modern residential zone for the mid-century middle class, and it has retained that character remarkably well.</p>
 
                     <h3>The Investment Outlook</h3>
-                    <p>Rising star. Prices are catching up to Del Valle but offer more 'character.' It is a prime target for renovation-focused investors. The stock of mid-century apartments is high, and the market for restored vintage units is booming. It is following the exact trajectory of Roma Sur 5 years ago.</p>
+                    <p>Rising star. Prices are catching up to Del Valle but offer more 'character.' It is a prime target for renovation-focused investors. The stock of mid-century apartments is high, and the market for restored vintage units is booming. It is following the exact trajectory of Roma Sur 5 years ago. <br><br><strong>Market Insight:</strong> Renovation offers the highest ROI in Narvarte. Buying a 'fixer-upper' and updating systems/finishes generates significantly more equity than buying new construction.</p>
                     <div style="background: #f4f4f4; padding: 30px; border-left: 4px solid #000; margin: 40px 0;">
                         <strong>Insider Tip:</strong> Preservation pays. Restore the terrazzo floors and vintage details.
                     </div>
@@ -158,11 +158,11 @@
             <div class="container grid-2">
                 <div>
                     <h2>The Challenge</h2>
-                    <p style="font-size: 1.5rem;">Aging Infrastructure. 70-year-old plumbing and wiring are standard risks.</p>
+                    <p style="font-size: 1.5rem;">The logistics of renovation in Narvarte are tough. Narrow streets make debris removal difficult, and noise restrictions are strict in these dense residential zones. <br>Furthermore, aging infrastructure. 70-year-old plumbing and wiring are standard risks.</p>
                 </div>
                 <div>
                     <h2>Our Solution</h2>
-                    <p>We always recommend a full systems replacement in Narvarte renovations.</p>
+                    <p>Our construction teams are trained in 'Low-Impact Renovation.' We use specialized smaller trucks for debris and strictly adhere to work hours to maintain neighborly relations. We always recommend a full systems replacement in Narvarte renovations.</p>
                     <p>Led by Erik Martínez (AIA, NCARB), formerly of SHoP Architects NYC, we navigate these complexities with precision.</p>
                 </div>
             </div>
@@ -195,7 +195,7 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
+        <!-- CONTACT (Static Section - now redundant with modal, but good for SEO/Footer anchor) -->
         <section id="contact" class="section" style="background: #000; color: #fff;">
             <div class="container grid-2">
                 <div>
@@ -208,7 +208,9 @@
                     </ul>
                 </div>
                 <div>
-                    <form action="#" method="POST" style="display: grid; gap: 20px;">
+                    <!-- Static form for non-JS users / fallback -->
+                    <form name="lead-form-static" method="POST" data-netlify="true" style="display: grid; gap: 20px;">
+                        <input type="hidden" name="form-name" value="lead-form-static" />
                         <input type="hidden" name="source_page" value="renovation-contractors-narvarte">
                         <input type="text" name="name" placeholder="NAME" required style="padding: 20px; background: transparent; border: 1px solid #333; color: #fff; font-family: var(--font-main);">
                         <input type="email" name="email" placeholder="EMAIL" required style="padding: 20px; background: transparent; border: 1px solid #333; color: #fff; font-family: var(--font-main);">
@@ -223,7 +225,7 @@
         <section class="section">
             <div class="container">
                 <h2 style="margin-bottom: 40px;">Explore Nearby Zones</h2>
-                <ul class="swiss-list" style="border-top: none;"><li><a href="renovation-contractors-del-valle.html">Architecture in Del Valle</a><span>Explore Zone &rarr;</span></li><li><a href="renovation-contractors-roma-sur.html">Architecture in Roma Sur</a><span>Explore Zone &rarr;</span></li></ul>
+                <ul class="swiss-list" style="border-top: none;"><li><a href="renovation-contractors-del-valle.html">Renovation Contractors in Del Valle</a><span>Explore Zone &rarr;</span></li><li><a href="renovation-contractors-roma-sur.html">Renovation Contractors in Roma Sur</a><span>Explore Zone &rarr;</span></li></ul>
             </div>
         </section>
 
@@ -259,6 +261,53 @@
             </div>
         </div>
     </footer>
+
+    <!-- LEAD MODAL -->
+    <div id="lead-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 style="margin-bottom: 10px;">Request Feasibility Study</h3>
+            <p style="margin-bottom: 30px; font-size: 0.9rem;">Tell us about your project in Narvarte.</p>
+            <form name="lead-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="lead-form" />
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="source_page" id="modal-source" value="">
+                
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone (Optional)">
+                <textarea name="message" placeholder="Project Details..." required></textarea>
+                
+                <button type="submit" class="btn" style="width: 100%;">Get Free Assessment</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        const modal = document.getElementById('lead-modal');
+        const btns = document.querySelectorAll('.open-modal');
+        const span = document.querySelector('.close-modal');
+        const sourceInput = document.getElementById('modal-source');
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                sourceInput.value = window.location.pathname; // Capture Source Page
+                modal.style.display = 'block';
+            });
+        });
+
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>

@@ -37,7 +37,7 @@
             <ul class="nav-links">
                 <li><a href="../index.html">Work</a></li>
                 <li><a href="../about.html">Studio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="open-modal">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -50,7 +50,7 @@
                     <h4>Architecture Guide 2026</h4>
                     <h1>Interior Design Studio: Coyoacán</h1>
                     <p>Bringing the warmth of Mexican materials to modern interiors. Our design team curates furniture, lighting, and finishes for Coyoacán spaces.</p>
-                    <a href="#contact" class="btn" style="margin-top: 40px;">Start Project</a>
+                    <button class="btn open-modal" style="margin-top: 40px;">Start Project</button>
                 </div>
                 <!-- IMAGE 1: HERO -->
                 <img src="../img/locations/coyoacan-hero.png" alt="Architecture in Coyoacán" class="hero-image">
@@ -101,7 +101,7 @@
                 <!-- Main Narrative -->
                 <div class="main-text">
                     <h2>Living & Building in Coyoacán</h2>
-                    <p>Living in Coyoacán feels like living in a small province. The pace is slower. It attracts academics, artists, and families who want a garden and a connection to history. Weekends are dedicated to culture: browsing the book market, visiting the Blue House (Frida Kahlo), or walking in the Viveros (nurseries). It is less about 'scene' and more about 'community.' The air feels cleaner here, thanks to the abundance of trees and the Viveros park. It is a place for intellectuals and those who appreciate the 'Slow Life.' You don't move to Coyoacán for the nightlife; you move here for the Sunday morning coffee and the vibrant colors of the colonial architecture.</p>
+                    <p>Living in Coyoacán feels like living in a small province. The pace is slower. It attracts academics, artists, and families who want a garden and a connection to history. Weekends are dedicated to culture: browsing the book market, visiting the Blue House (Frida Kahlo), or walking in the Viveros (nurseries). It is less about 'scene' and more about 'community.' The air feels cleaner here, thanks to the abundance of trees and the Viveros park. It is a place for intellectuals and those who appreciate the 'Slow Life.' You don't move to Coyoacán for the nightlife; you move here for the Sunday morning coffee and the vibrant colors of the colonial architecture. <br><br><strong>Service Perspective:</strong> Interiors in Coyoacán demand a dialogue with the exterior. We bring the colors and textures of the neighborhood—volcanic stone, jacaranda purple, terracotta—inside to create a sense of place.</p>
                     
                     <!-- IMAGE 3: ARCHITECTURAL DETAIL -->
                     <img src="../img/locations/coyoacan-detail.png" alt="Architectural Detail of Coyoacán" style="width: 100%; height: 300px; object-fit: cover; margin: 40px 0;">
@@ -110,7 +110,7 @@
                     <p>Coyoacán predates Mexico City. It was the headquarters of Hernán Cortés. It retains its original cobblestone streets. For centuries it was a separate village, only absorbed by the urban sprawl in the 20th century. This separation preserved its distinct character and layout. It has always been a haven for artists and revolutionaries—Frida Kahlo, Diego Rivera, Leon Trotsky all called it home. Walking its streets feels like walking through a history book.</p>
 
                     <h3>The Investment Outlook</h3>
-                    <p>A heritage asset. Coyoacán is a long-term hold. The value comes from the scarcity of colonial homes. They simply aren't making any more of them. It is a stable, high-value market driven by lifestyle buyers rather than speculators. While it may not see the explosive growth of Juárez, it will never lose its appeal. It is the 'Oxford' or 'Cambridge' of Mexico City.</p>
+                    <p>A heritage asset. Coyoacán is a long-term hold. The value comes from the scarcity of colonial homes. They simply aren't making any more of them. It is a stable, high-value market driven by lifestyle buyers rather than speculators. While it may not see the explosive growth of Juárez, it will never lose its appeal. It is the 'Oxford' or 'Cambridge' of Mexico City. <br><br><strong>Market Insight:</strong> High-end interior design is the differentiator in Coyoacán's competitive rental market. A unit with bespoke joinery and lighting rents for 30-40% more than a standard white-box apartment.</p>
                     <div style="background: #f4f4f4; padding: 30px; border-left: 4px solid #000; margin: 40px 0;">
                         <strong>Insider Tip:</strong> The Garden is the Value. Buyers pay a premium for lush, well-designed internal courtyards.
                     </div>
@@ -158,11 +158,11 @@
             <div class="container grid-2">
                 <div>
                     <h2>The Challenge</h2>
-                    <p style="font-size: 1.5rem;">INAH (National Institute of Anthropology and History) controls everything in the historic zone.</p>
+                    <p style="font-size: 1.5rem;">The challenge is often lighting. Older buildings in Coyoacán can be deep and dark. Bringing light into the core of the floorplate is our primary design objective. <br>Furthermore, inah (national institute of anthropology and history) controls everything in the historic zone.</p>
                 </div>
                 <div>
                     <h2>Our Solution</h2>
-                    <p>We know how to modernize a colonial home's systems without disturbing the protected historic fabric.</p>
+                    <p>We use reflective materials, strategic mirrors, and warm 2700K lighting schemes to make even ground-floor apartments feel airy and luminous. We know how to modernize a colonial home's systems without disturbing the protected historic fabric.</p>
                     <p>Led by Erik Martínez (AIA, NCARB), formerly of SHoP Architects NYC, we navigate these complexities with precision.</p>
                 </div>
             </div>
@@ -195,7 +195,7 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
+        <!-- CONTACT (Static Section - now redundant with modal, but good for SEO/Footer anchor) -->
         <section id="contact" class="section" style="background: #000; color: #fff;">
             <div class="container grid-2">
                 <div>
@@ -208,7 +208,9 @@
                     </ul>
                 </div>
                 <div>
-                    <form action="#" method="POST" style="display: grid; gap: 20px;">
+                    <!-- Static form for non-JS users / fallback -->
+                    <form name="lead-form-static" method="POST" data-netlify="true" style="display: grid; gap: 20px;">
+                        <input type="hidden" name="form-name" value="lead-form-static" />
                         <input type="hidden" name="source_page" value="interior-design-coyoacan">
                         <input type="text" name="name" placeholder="NAME" required style="padding: 20px; background: transparent; border: 1px solid #333; color: #fff; font-family: var(--font-main);">
                         <input type="email" name="email" placeholder="EMAIL" required style="padding: 20px; background: transparent; border: 1px solid #333; color: #fff; font-family: var(--font-main);">
@@ -223,7 +225,7 @@
         <section class="section">
             <div class="container">
                 <h2 style="margin-bottom: 40px;">Explore Nearby Zones</h2>
-                <ul class="swiss-list" style="border-top: none;"><li><a href="interior-design-del-valle.html">Architecture in Del Valle</a><span>Explore Zone &rarr;</span></li></ul>
+                <ul class="swiss-list" style="border-top: none;"><li><a href="interior-design-del-valle.html">Interior Design in Del Valle</a><span>Explore Zone &rarr;</span></li></ul>
             </div>
         </section>
 
@@ -259,6 +261,53 @@
             </div>
         </div>
     </footer>
+
+    <!-- LEAD MODAL -->
+    <div id="lead-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 style="margin-bottom: 10px;">Request Feasibility Study</h3>
+            <p style="margin-bottom: 30px; font-size: 0.9rem;">Tell us about your project in Coyoacán.</p>
+            <form name="lead-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="lead-form" />
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="source_page" id="modal-source" value="">
+                
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="phone" placeholder="Phone (Optional)">
+                <textarea name="message" placeholder="Project Details..." required></textarea>
+                
+                <button type="submit" class="btn" style="width: 100%;">Get Free Assessment</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        const modal = document.getElementById('lead-modal');
+        const btns = document.querySelectorAll('.open-modal');
+        const span = document.querySelector('.close-modal');
+        const sourceInput = document.getElementById('modal-source');
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                sourceInput.value = window.location.pathname; // Capture Source Page
+                modal.style.display = 'block';
+            });
+        });
+
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>

@@ -3,6 +3,7 @@ import os
 
 # Configuration
 locations_file = 'locations.json'
+modifiers_file = 'service_modifiers.json'
 template_file = 'location_template.html'
 output_dir = 'locations'
 
@@ -14,7 +15,10 @@ if not os.path.exists(output_dir):
 with open(locations_file, 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-# Load template
+with open(modifiers_file, 'r', encoding='utf-8') as f:
+    modifiers = json.load(f)
+
+# Load template into memory
 with open(template_file, 'r', encoding='utf-8') as f:
     template_content = f.read()
 
@@ -22,14 +26,18 @@ services = data['services']
 locations = data['locations']
 
 print(f"Found {len(services)} services and {len(locations)} locations.")
-print(f"Generating {len(services) * len(locations)} pages...")
+print(f"Generating {len(services) * len(locations)} unique pages...")
 
 generated_count = 0
 
 for service in services:
+    service_slug = service['slug']
+    # Get modifiers for this service (default to empty dict if not found)
+    mods = modifiers.get(service_slug, {})
+    
     for location in locations:
         # Prepare data for replacement
-        slug = f"{service['slug']}-{location['slug']}"
+        slug = f"{service_slug}-{location['slug']}"
         filename = f"{slug}.html"
         filepath = os.path.join(output_dir, filename)
         
@@ -44,35 +52,56 @@ for service in services:
         nearby_html = '<ul class="swiss-list" style="border-top: none;">'
         if 'nearby' in location:
             for neighbor in location['nearby']:
-                # Link to the SAME service type in the neighbor location
-                # e.g., if on 'architects-polanco', link to 'architects-condesa'
-                neighbor_slug = f"{service['slug']}-{neighbor['slug']}.html"
-                nearby_html += f'<li><a href="{neighbor_slug}">Architecture in {neighbor["name"]}</a><span>Explore Zone &rarr;</span></li>'
+                neighbor_slug = f"{service_slug}-{neighbor['slug']}.html"
+                nearby_html += f'<li><a href="{neighbor_slug}">{service["name"]} in {neighbor["name"]}</a><span>Explore Zone &rarr;</span></li>'
         nearby_html += '</ul>'
 
-        # Replace placeholders
+        # MERGE CONTENT
+        # Vibe
+        base_vibe = location.get('lifestyle_vibe', '')
+        mod_vibe = mods.get('vibe_modifier', '').replace("{{location_name}}", location['name'])
+        full_vibe = f"{base_vibe} <br><br><strong>Service Perspective:</strong> {mod_vibe}"
+        
+        # Investment
+        base_invest = location.get('investment_outlook', '')
+        mod_invest = mods.get('investment_modifier', '').replace("{{location_name}}", location['name'])
+        full_invest = f"{base_invest} <br><br><strong>Market Insight:</strong> {mod_invest}"
+        
+        # Challenge
+        base_challenge = location['challenge']
+        mod_challenge = mods.get('challenge_modifier', '').replace("{{location_name}}", location['name'])
+        full_challenge = f"{mod_challenge} <br>Furthermore, {base_challenge.lower()}"
+        
+        # Solution
+        base_solution = location['solution']
+        mod_solution = mods.get('solution_modifier', '').replace("{{location_name}}", location['name'])
+        full_solution = f"{mod_solution} {base_solution}"
+
+        # Reset page content from template
         page_content = template_content
+
+        # Replace placeholders
         page_content = page_content.replace("{{location_name}}", location['name'])
         page_content = page_content.replace("{{service_name}}", service['name'])
         page_content = page_content.replace("{{h1_title}}", h1_title)
         page_content = page_content.replace("{{intro_text}}", intro_text)
         page_content = page_content.replace("{{meta_description}}", meta_description)
         
-        # Vibe & Narrative
+        # Vibe & Narrative (MERGED)
         page_content = page_content.replace("{{vibe_description}}", location['vibe'])
-        page_content = page_content.replace("{{lifestyle_vibe}}", location.get('lifestyle_vibe', ''))
+        page_content = page_content.replace("{{lifestyle_vibe}}", full_vibe)
         page_content = page_content.replace("{{history}}", location.get('history', ''))
         page_content = page_content.replace("{{landmarks}}", location.get('landmarks', ''))
         
-        # Challenge / Solution
-        page_content = page_content.replace("{{challenge_text}}", location['challenge'])
-        page_content = page_content.replace("{{solution_text}}", location['solution'])
+        # Challenge / Solution (MERGED)
+        page_content = page_content.replace("{{challenge_text}}", full_challenge)
+        page_content = page_content.replace("{{solution_text}}", full_solution)
         
         # Intelligence Data
         page_content = page_content.replace("{{zoning_authority}}", location.get('zoning_authority', 'SEDUVI'))
         page_content = page_content.replace("{{permit_timeline}}", location.get('permit_timeline', '3-6 Months'))
         page_content = page_content.replace("{{cost_per_sqm}}", location.get('cost_per_sqm', 'Contact for Quote'))
-        page_content = page_content.replace("{{focus_area_1}}", location['focus_areas'][0].title()) # Primary focus
+        page_content = page_content.replace("{{focus_area_1}}", location['focus_areas'][0].title())
         
         # Cheat Sheet Data
         page_content = page_content.replace("{{best_streets}}", best_streets_str)
@@ -81,8 +110,8 @@ for service in services:
         page_content = page_content.replace("{{dining_scene}}", location.get('dining_scene', ''))
         page_content = page_content.replace("{{quirks}}", location.get('quirks', ''))
         
-        # Investment
-        page_content = page_content.replace("{{investment_outlook}}", location.get('investment_outlook', ''))
+        # Investment (MERGED)
+        page_content = page_content.replace("{{investment_outlook}}", full_invest)
         page_content = page_content.replace("{{investor_tip}}", location.get('investor_tip', ''))
         
         # System
@@ -96,4 +125,4 @@ for service in services:
         
         generated_count += 1
 
-print(f"Successfully generated {generated_count} pages in '{output_dir}/'.")
+print(f"Successfully generated {generated_count} unique pages in '{output_dir}/'.")
