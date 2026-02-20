@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://www.mexicocityarchitect.com/blog/buying-property-mexico-city-foreigner</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.mexicocityarchitect.com/img/blog-image.jpg</image:loc>
+      <image:title>Buying Property in Mexico City as a Foreigner</image:title>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://www.mexicocityarchitect.com/blog/renovating-property-mexico-city</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://www.mexicocityarchitect.com/img/renovation-image.jpg</image:loc>
+      <image:title>Renovating Property in Mexico City</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Add more blog posts here -->
+  
+</urlset>

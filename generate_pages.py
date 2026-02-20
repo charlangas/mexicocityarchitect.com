@@ -3,8 +3,6 @@ import os
 
 # Configuration
 locations_file = 'locations.json'
-modifiers_file = 'service_modifiers.json'
-blog_file = 'blog.json'
 template_file = 'location_template.html'
 output_dir = 'locations'
 
@@ -16,137 +14,128 @@ if not os.path.exists(output_dir):
 with open(locations_file, 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-with open(modifiers_file, 'r', encoding='utf-8') as f:
-    modifiers = json.load(f)
-
-with open(blog_file, 'r', encoding='utf-8') as f:
-    blog_posts = json.load(f)
-
-# Load template into memory
+# Load template
 with open(template_file, 'r', encoding='utf-8') as f:
     template_content = f.read()
 
-services = data['services']
 locations = data['locations']
+services = data['services'] 
 
-print(f"Found {len(services)} services and {len(locations)} locations.")
-print(f"Generating {len(services) * len(locations)} unique pages...")
+print(f"Generating pages for {len(locations)} locations...")
 
-generated_count = 0
+for location in locations:
+    # SKIP CONDESA COMPLETELY TO PRESERVE MANUAL EDITS
+    if location['slug'] == 'condesa':
+        print("Skipping Condesa (Manual Override)...")
+        continue
 
-for service in services:
-    service_slug = service['slug']
-    # Get modifiers for this service (default to empty dict if not found)
-    mods = modifiers.get(service_slug, {})
-    
-    for location in locations:
-        # Prepare data for replacement
+    for service in services:
+        service_slug = service['slug']
+        
+        # Prepare filename
         slug = f"{service_slug}-{location['slug']}"
         filename = f"{slug}.html"
         filepath = os.path.join(output_dir, filename)
         
-        h1_title = f"{service['h1_prefix']} {location['name']}"
-        intro_text = service['intro'].replace("{{location_name}}", location['name'])
-        meta_description = f"{service['meta_desc_prefix']} {location['name']}. {location['vibe']}"
-        
-        # Prepare lists for display (comma separated)
-        best_streets_str = ", ".join(location.get('best_streets', []))
-        
-        # BUILD NEARBY LINKS HTML
-        nearby_html = '<ul class="swiss-list" style="border-top: none;">'
-        if 'nearby' in location:
-            for neighbor in location['nearby']:
-                neighbor_slug = f"{service_slug}-{neighbor['slug']}.html"
-                nearby_html += f'<li><a href="{neighbor_slug}">{service["name"]} in {neighbor["name"]}</a><span>Explore Zone &rarr;</span></li>'
-        nearby_html += '</ul>'
-
-        # BUILD BLOG SECTION HTML
-        blog_html = ""
-        related_post = next((post for post in blog_posts if post['related_location'] == location['slug']), None)
-        
-        if related_post:
-            blog_html = f"""
-            <section class="section" style="background: #fafafa;">
-                <div class="container grid-2" style="align-items: center;">
-                    <img src="{related_post['image'].replace('../', '../')}" alt="{related_post['title']}" style="width: 100%; height: 350px; object-fit: cover;">
-                    <div>
-                        <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; color: #999;">From the Journal</p>
-                        <h2 style="margin: 10px 0;">{related_post['title']}</h2>
-                        <p>{related_post['excerpt']}</p>
-                        <a href="../blog/{related_post['slug']}.html" class="btn-secondary">Read Article</a>
-                    </div>
-                </div>
-            </section>
-            """
-
-        # MERGE CONTENT
-        # Vibe
-        base_vibe = location.get('lifestyle_vibe', '')
-        mod_vibe = mods.get('vibe_modifier', '').replace("{{location_name}}", location['name'])
-        full_vibe = f"{base_vibe} <br><br><strong>Service Perspective:</strong> {mod_vibe}"
-        
-        # Investment
-        base_invest = location.get('investment_outlook', '')
-        mod_invest = mods.get('investment_modifier', '').replace("{{location_name}}", location['name'])
-        full_invest = f"{base_invest} <br><br><strong>Market Insight:</strong> {mod_invest}"
-        
-        # Challenge
-        base_challenge = location['challenge']
-        mod_challenge = mods.get('challenge_modifier', '').replace("{{location_name}}", location['name'])
-        full_challenge = f"{mod_challenge} <br>Furthermore, {base_challenge.lower()}"
-        
-        # Solution
-        base_solution = location['solution']
-        mod_solution = mods.get('solution_modifier', '').replace("{{location_name}}", location['name'])
-        full_solution = f"{mod_solution} {base_solution}"
-
-        # Reset page content from template
+        # Prepare dynamic content
         page_content = template_content
-
-        # Replace placeholders
+        
+        # Core Identity
         page_content = page_content.replace("{{location_name}}", location['name'])
-        page_content = page_content.replace("{{service_name}}", service['name'])
-        page_content = page_content.replace("{{h1_title}}", h1_title)
-        page_content = page_content.replace("{{intro_text}}", intro_text)
-        page_content = page_content.replace("{{meta_description}}", meta_description)
-        
-        # Vibe & Narrative (MERGED)
-        page_content = page_content.replace("{{vibe_description}}", location['vibe'])
-        page_content = page_content.replace("{{lifestyle_vibe}}", full_vibe)
-        page_content = page_content.replace("{{history}}", location.get('history', ''))
-        page_content = page_content.replace("{{landmarks}}", location.get('landmarks', ''))
-        
-        # Challenge / Solution (MERGED)
-        page_content = page_content.replace("{{challenge_text}}", full_challenge)
-        page_content = page_content.replace("{{solution_text}}", full_solution)
-        
-        # Intelligence Data
-        page_content = page_content.replace("{{zoning_authority}}", location.get('zoning_authority', 'SEDUVI'))
-        page_content = page_content.replace("{{permit_timeline}}", location.get('permit_timeline', '3-6 Months'))
-        page_content = page_content.replace("{{cost_per_sqm}}", location.get('cost_per_sqm', 'Contact for Quote'))
-        page_content = page_content.replace("{{focus_area_1}}", location['focus_areas'][0].title())
-        
-        # Cheat Sheet Data
-        page_content = page_content.replace("{{best_streets}}", best_streets_str)
-        page_content = page_content.replace("{{hidden_gems}}", location.get('hidden_gems', 'Contact us'))
-        page_content = page_content.replace("{{best_coffee}}", location.get('best_coffee', ''))
-        page_content = page_content.replace("{{dining_scene}}", location.get('dining_scene', ''))
-        page_content = page_content.replace("{{quirks}}", location.get('quirks', ''))
-        
-        # Investment (MERGED)
-        page_content = page_content.replace("{{investment_outlook}}", full_invest)
-        page_content = page_content.replace("{{investor_tip}}", location.get('investor_tip', ''))
-        
-        # System
-        page_content = page_content.replace("{{slug}}", slug)
         page_content = page_content.replace("{{location_slug}}", location['slug'])
-        page_content = page_content.replace("{{nearby_links_html}}", nearby_html)
-        page_content = page_content.replace("{{blog_section_html}}", blog_html)
+        page_content = page_content.replace("{{slug}}", slug)
         
+        # Meta & Hero
+        page_content = page_content.replace("{{page_title}}", location['page_title'])
+        page_content = page_content.replace("{{meta_description}}", f"{service['meta_desc_prefix']} {location['name']}. {location['hero_text']}")
+        page_content = page_content.replace("{{hero_h1}}", location['hero_h1'])
+        page_content = page_content.replace("{{hero_text}}", location['hero_text'])
+        
+        # Intelligence Grid
+        page_content = page_content.replace("{{intel_authority}}", location['intel']['authority'])
+        page_content = page_content.replace("{{intel_timeline}}", location['intel']['timeline'])
+        page_content = page_content.replace("{{intel_cost}}", location['intel']['cost'])
+        page_content = page_content.replace("{{intel_focus}}", location['intel']['focus'])
+        
+        # Sidebar
+        page_content = page_content.replace("{{resident_view}}", location['resident_view'])
+        
+        # Landmarks List
+        landmarks_html = ""
+        for landmark in location['landmarks']:
+            landmarks_html += f"<li>{landmark}</li>"
+        page_content = page_content.replace("{{landmarks_list}}", landmarks_html)
+        
+        # Main Narrative
+        content = location['main_content']
+        page_content = page_content.replace("{{main_h1}}", content['h1'])
+        page_content = page_content.replace("{{main_p1}}", content['p1'])
+        page_content = page_content.replace("{{main_h2}}", content['h2'])
+        page_content = page_content.replace("{{main_p2}}", content['p2'])
+        
+        page_content = page_content.replace("{{structural_title}}", content['structural_title'])
+        page_content = page_content.replace("{{structural_text}}", content['structural_text'])
+        page_content = page_content.replace("{{structural_sub}}", content['structural_sub'])
+        
+        page_content = page_content.replace("{{heritage_title}}", content['heritage_title'])
+        page_content = page_content.replace("{{heritage_text_1}}", content['heritage_text_1'])
+        page_content = page_content.replace("{{heritage_text_2}}", content['heritage_text_2'])
+        
+        page_content = page_content.replace("{{water_title}}", content['water_title'])
+        page_content = page_content.replace("{{water_text}}", content['water_text'])
+        
+        # Feasibility Table
+        rows_html = ""
+        for row in location['feasibility']:
+            rows_html += f"""
+            <tr style="border-bottom: 1px solid #eee;">
+                <td style="padding: 20px;">{row['type']}</td>
+                <td>{row['time']}</td>
+                <td>{row['risk']}</td>
+                <td>{row['status']}</td>
+            </tr>
+            """
+        page_content = page_content.replace("{{feasibility_rows}}", rows_html)
+        
+        # Renovations & Interiors
+        page_content = page_content.replace("{{renovations_title}}", location['renovations']['title'])
+        page_content = page_content.replace("{{renovations_text}}", location['renovations']['text'])
+        page_content = page_content.replace("{{interiors_title}}", location['interiors']['title'])
+        page_content = page_content.replace("{{interiors_text}}", location['interiors']['text'])
+        
+        # Cheat Sheet
+        print(f"Processing cheat sheet for {location['name']}")
+        cheat = location['cheat_sheet']
+        page_content = page_content.replace("{{cheat_streets}}", cheat['streets'])
+        page_content = page_content.replace("{{cheat_zoning}}", cheat['zoning'])
+        page_content = page_content.replace("{{cheat_cost}}", cheat['cost'])
+        page_content = page_content.replace("{{cheat_coffee}}", cheat['coffee'])
+        page_content = page_content.replace("{{cheat_quirk}}", cheat['quirk'])
+        
+        # Challenge / Solution
+        page_content = page_content.replace("{{challenge_text_1}}", location['challenge']['text_1'])
+        page_content = page_content.replace("{{challenge_text_2}}", location['challenge']['text_2'])
+        page_content = page_content.replace("{{solution_text_1}}", location['solution']['text_1'])
+        page_content = page_content.replace("{{solution_text_2}}", location['solution']['text_2'])
+        
+        # Nearby Links
+        nearby_html = '<ul class="swiss-list" style="border-top: none;">' # Removed swiss-list per observation, but user said 'like Condesa', Condesa file uses <ul>. 
+        # Actually Condesa file had <ul> but template had <ul class='swiss-list'> before. 
+        # I will use simple UL to match Condesa exactly as read from file.
+        nearby_html = '<ul>'
+        
+        count = 0
+        for other_loc in locations:
+            if other_loc['slug'] != location['slug'] and count < 3:
+                neighbor_slug = f"architects-{other_loc['slug']}.html" 
+                nearby_html += f'<li><a href="{neighbor_slug}">{other_loc["name"]}</a></li>'
+                count += 1
+                
+        nearby_html += '</ul>'
+        page_content = page_content.replace("{{nearby_links_html}}", nearby_html)
+
         # Write file
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(page_content)
-        
-        generated_count += 1
-
-print(f"Successfully generated {generated_count} unique pages in '{output_dir}/'.")
+            
+print("Done.")

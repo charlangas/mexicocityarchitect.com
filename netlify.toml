@@ -1,0 +1,451 @@
+# Netlify Configuration File
+# For: mexicocityarchitect.com
+
+[build]
+  publish = "."
+
+# --- GLOBAL REDIRECTS ---
+# These ensure clean URLs by removing the .html extension and handling trailing slashes.
+
+[[redirects]]
+  from = "https://mexicocityarchitect.com/*"
+  to = "https://www.mexicocityarchitect.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*/"
+  to = "/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/"
+  to = "/directory"
+  status = 301
+  force = true
+  
+[[redirects]]
+  from = "/locations"
+  to = "/directory"
+  status = 301
+  force = true
+
+# Catch-all for any other .html files
+[[redirects]]
+  from = "/:page.html"
+  to = "/:page"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/:page.html"
+  to = "/locations/:page"
+  status = 301
+  force = true
+
+# --- LEGACY SERVICE URL REDIRECTS ---
+# This section permanently redirects all old service-specific URLs 
+# to the canonical 'architects-[neighborhood]' page.
+
+# Anzures
+[[redirects]]
+  from = "/locations/residential-architects-anzures"
+  to = "/locations/architects-anzures"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-anzures"
+  to = "/locations/architects-anzures"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-anzures"
+  to = "/locations/architects-anzures"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-anzures"
+  to = "/locations/architects-anzures"
+  status = 301
+
+# Bosques de las Lomas
+[[redirects]]
+  from = "/locations/residential-architects-bosques-de-las-lomas"
+  to = "/locations/architects-bosques-de-las-lomas"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-bosques-de-las-lomas"
+  to = "/locations/architects-bosques-de-las-lomas"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-bosques-de-las-lomas"
+  to = "/locations/architects-bosques-de-las-lomas"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-bosques-de-las-lomas"
+  to = "/locations/architects-bosques-de-las-lomas"
+  status = 301
+
+# Centro Historico
+[[redirects]]
+  from = "/locations/residential-architects-centro-historico"
+  to = "/locations/architects-centro-historico"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-centro-historico"
+  to = "/locations/architects-centro-historico"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-centro-historico"
+  to = "/locations/architects-centro-historico"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-centro-historico"
+  to = "/locations/architects-centro-historico"
+  status = 301
+
+# Chimalistac
+[[redirects]]
+  from = "/locations/residential-architects-chimalistac"
+  to = "/locations/architects-chimalistac"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-chimalistac"
+  to = "/locations/architects-chimalistac"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-chimalistac"
+  to = "/locations/architects-chimalistac"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-chimalistac"
+  to = "/locations/architects-chimalistac"
+  status = 301
+
+# Condesa
+[[redirects]]
+  from = "/locations/residential-architects-condesa"
+  to = "/locations/architects-condesa"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-condesa"
+  to = "/locations/architects-condesa"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-condesa"
+  to = "/locations/architects-condesa"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-condesa"
+  to = "/locations/architects-condesa"
+  status = 301
+
+# Coyoacán
+[[redirects]]
+  from = "/locations/residential-architects-coyoacan"
+  to = "/locations/architects-coyoacan"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-coyoacan"
+  to = "/locations/architects-coyoacan"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-coyoacan"
+  to = "/locations/architects-coyoacan"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-coyoacan"
+  to = "/locations/architects-coyoacan"
+  status = 301
+
+# Cuauhtémoc
+[[redirects]]
+  from = "/locations/residential-architects-cuauhtemoc"
+  to = "/locations/architects-cuauhtemoc"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-cuauhtemoc"
+  to = "/locations/architects-cuauhtemoc"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-cuauhtemoc"
+  to = "/locations/architects-cuauhtemoc"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-cuauhtemoc"
+  to = "/locations/architects-cuauhtemoc"
+  status = 301
+
+# Del Valle
+[[redirects]]
+  from = "/locations/residential-architects-del-valle"
+  to = "/locations/architects-del-valle"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-del-valle"
+  to = "/locations/architects-del-valle"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-del-valle"
+  to = "/locations/architects-del-valle"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-del-valle"
+  to = "/locations/architects-del-valle"
+  status = 301
+
+# Escandón
+[[redirects]]
+  from = "/locations/residential-architects-escandon"
+  to = "/locations/architects-escandon"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-escandon"
+  to = "/locations/architects-escandon"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-escandon"
+  to = "/locations/architects-escandon"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-escandon"
+  to = "/locations/architects-escandon"
+  status = 301
+
+# Interlomas
+[[redirects]]
+  from = "/locations/residential-architects-interlomas"
+  to = "/locations/architects-interlomas"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-interlomas"
+  to = "/locations/architects-interlomas"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-interlomas"
+  to = "/locations/architects-interlomas"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-interlomas"
+  to = "/locations/architects-interlomas"
+  status = 301
+
+# Juárez
+[[redirects]]
+  from = "/locations/residential-architects-juarez"
+  to = "/locations/architects-juarez"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-juarez"
+  to = "/locations/architects-juarez"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-juarez"
+  to = "/locations/architects-juarez"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-juarez"
+  to = "/locations/architects-juarez"
+  status = 301
+
+# Lomas de Chapultepec
+[[redirects]]
+  from = "/locations/residential-architects-lomas-de-chapultepec"
+  to = "/locations/architects-lomas-de-chapultepec"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-lomas-de-chapultepec"
+  to = "/locations/architects-lomas-de-chapultepec"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-lomas-de-chapultepec"
+  to = "/locations/architects-lomas-de-chapultepec"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-lomas-de-chapultepec"
+  to = "/locations/architects-lomas-de-chapultepec"
+  status = 301
+
+# Nápoles
+[[redirects]]
+  from = "/locations/residential-architects-napoles"
+  to = "/locations/architects-napoles"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-napoles"
+  to = "/locations/architects-napoles"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-napoles"
+  to = "/locations/architects-napoles"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-napoles"
+  to = "/locations/architects-napoles"
+  status = 301
+
+# Narvarte
+[[redirects]]
+  from = "/locations/residential-architects-narvarte"
+  to = "/locations/architects-narvarte"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-narvarte"
+  to = "/locations/architects-narvarte"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-narvarte"
+  to = "/locations/architects-narvarte"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-narvarte"
+  to = "/locations/architects-narvarte"
+  status = 301
+
+# Polanco
+[[redirects]]
+  from = "/locations/residential-architects-polanco"
+  to = "/locations/architects-polanco"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-polanco"
+  to = "/locations/architects-polanco"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-polanco"
+  to = "/locations/architects-polanco"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-polanco"
+  to = "/locations/architects-polanco"
+  status = 301
+
+# Roma Norte
+[[redirects]]
+  from = "/locations/residential-architects-roma-norte"
+  to = "/locations/architects-roma-norte"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-roma-norte"
+  to = "/locations/architects-roma-norte"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-roma-norte"
+  to = "/locations/architects-roma-norte"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-roma-norte"
+  to = "/locations/architects-roma-norte"
+  status = 301
+
+# Roma Sur
+[[redirects]]
+  from = "/locations/residential-architects-roma-sur"
+  to = "/locations/architects-roma-sur"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-roma-sur"
+  to = "/locations/architects-roma-sur"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-roma-sur"
+  to = "/locations/architects-roma-sur"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-roma-sur"
+  to = "/locations/architects-roma-sur"
+  status = 301
+
+# San Ángel
+[[redirects]]
+  from = "/locations/residential-architects-san-angel"
+  to = "/locations/architects-san-angel"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-san-angel"
+  to = "/locations/architects-san-angel"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-san-angel"
+  to = "/locations/architects-san-angel"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-san-angel"
+  to = "/locations/architects-san-angel"
+  status = 301
+
+# San Miguel Chapultepec
+[[redirects]]
+  from = "/locations/residential-architects-san-miguel-chapultepec"
+  to = "/locations/architects-san-miguel-chapultepec"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-san-miguel-chapultepec"
+  to = "/locations/architects-san-miguel-chapultepec"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-san-miguel-chapultepec"
+  to = "/locations/architects-san-miguel-chapultepec"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-san-miguel-chapultepec"
+  to = "/locations/architects-san-miguel-chapultepec"
+  status = 301
+
+# San Rafael
+[[redirects]]
+  from = "/locations/residential-architects-san-rafael"
+  to = "/locations/architects-san-rafael"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-san-rafael"
+  to = "/locations/architects-san-rafael"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-san-rafael"
+  to = "/locations/architects-san-rafael"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-san-rafael"
+  to = "/locations/architects-san-rafael"
+  status = 301
+
+# Santa Fe
+[[redirects]]
+  from = "/locations/residential-architects-santa-fe"
+  to = "/locations/architects-santa-fe"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-santa-fe"
+  to = "/locations/architects-santa-fe"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-santa-fe"
+  to = "/locations/architects-santa-fe"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-santa-fe"
+  to = "/locations/architects-santa-fe"
+  status = 301
+
+# Santa María la Ribera
+[[redirects]]
+  from = "/locations/residential-architects-santa-maria-de-la-ribera"
+  to = "/locations/architects-santa-maria-de-la-ribera"
+  status = 301
+[[redirects]]
+  from = "/locations/commercial-architects-santa-maria-de-la-ribera"
+  to = "/locations/architects-santa-maria-de-la-ribera"
+  status = 301
+[[redirects]]
+  from = "/locations/interior-design-santa-maria-de-la-ribera"
+  to = "/locations/architects-santa-maria-de-la-ribera"
+  status = 301
+[[redirects]]
+  from = "/locations/renovation-contractors-santa-maria-de-la-ribera"
+  to = "/locations/architects-santa-maria-de-la-ribera"
+  status = 301

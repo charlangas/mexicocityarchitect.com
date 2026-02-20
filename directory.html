@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Architecture Directory Mexico City | Talacha</title>
+    <meta name="description" content="Explore our architectural guides for Mexico City's premier neighborhoods.">
+    <title>Neighborhoods | Talacha</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,600&display=swap" rel="stylesheet">
@@ -16,6 +17,51 @@
 
       gtag('config', 'G-YBB82P1LG1');
     </script>
+    <style>
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .neighborhood-card {
+            border: 1px solid #000;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .neighborhood-card:hover {
+            transform: translateY(-5px);
+        }
+        .neighborhood-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #000;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+        .neighborhood-card:hover .neighborhood-image {
+            filter: grayscale(0%);
+        }
+        .card-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .card-content p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,292 +71,307 @@
             <ul class="nav-links">
                 <li><a href="index.html">Work</a></li>
                 <li><a href="about.html">Studio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="blog.html">Journal</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="section">
-            <div class="container">
-                <h1 style="margin-bottom: 20px;">Architecture Directory</h1>
-                <p>Comprehensive guide to architectural services in Mexico City's premier neighborhoods.</p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; margin-top: 80px;">
+    <main class="section" style="padding-top: 150px;">
+        <div class="container">
+            <h1 style="margin-bottom: 20px;">Neighborhoods</h1>
+            <p>Comprehensive architectural guides for Mexico City's most desirable zones.</p>
+            
+            <div class="directory-grid">
 
-                    <div>
-                        <h2 style="font-size: 2rem; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Polanco</h2>
-                        <ul class="swiss-list" style="border-top: none;">
-    
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/architects-polanco.html">Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/residential-architects-polanco.html">Residential Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/commercial-architects-polanco.html">Commercial Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/renovation-contractors-polanco.html">Renovation Contractors</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/interior-design-polanco.html">Interior Design</a>
-                            </li>
-        
-                        </ul>
-                    </div>
-    
-                    <div>
-                        <h2 style="font-size: 2rem; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Condesa</h2>
-                        <ul class="swiss-list" style="border-top: none;">
-    
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/architects-condesa.html">Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/residential-architects-condesa.html">Residential Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/commercial-architects-condesa.html">Commercial Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/renovation-contractors-condesa.html">Renovation Contractors</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/interior-design-condesa.html">Interior Design</a>
-                            </li>
-        
-                        </ul>
-                    </div>
-    
-                    <div>
-                        <h2 style="font-size: 2rem; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Roma Norte</h2>
-                        <ul class="swiss-list" style="border-top: none;">
-    
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/architects-roma-norte.html">Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/residential-architects-roma-norte.html">Residential Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/commercial-architects-roma-norte.html">Commercial Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/renovation-contractors-roma-norte.html">Renovation Contractors</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/interior-design-roma-norte.html">Interior Design</a>
-                            </li>
-        
-                        </ul>
-                    </div>
-    
-                    <div>
-                        <h2 style="font-size: 2rem; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Roma Sur</h2>
-                        <ul class="swiss-list" style="border-top: none;">
-    
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/architects-roma-sur.html">Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/residential-architects-roma-sur.html">Residential Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/commercial-architects-roma-sur.html">Commercial Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/renovation-contractors-roma-sur.html">Renovation Contractors</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/interior-design-roma-sur.html">Interior Design</a>
-                            </li>
-        
-                        </ul>
-                    </div>
-    
-                    <div>
-                        <h2 style="font-size: 2rem; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Lomas de Chapultepec</h2>
-                        <ul class="swiss-list" style="border-top: none;">
-    
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/architects-lomas-de-chapultepec.html">Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/residential-architects-lomas-de-chapultepec.html">Residential Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/commercial-architects-lomas-de-chapultepec.html">Commercial Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/renovation-contractors-lomas-de-chapultepec.html">Renovation Contractors</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/interior-design-lomas-de-chapultepec.html">Interior Design</a>
-                            </li>
-        
-                        </ul>
-                    </div>
-    
-                    <div>
-                        <h2 style="font-size: 2rem; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Santa Fe</h2>
-                        <ul class="swiss-list" style="border-top: none;">
-    
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/architects-santa-fe.html">Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/residential-architects-santa-fe.html">Residential Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/commercial-architects-santa-fe.html">Commercial Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/renovation-contractors-santa-fe.html">Renovation Contractors</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/interior-design-santa-fe.html">Interior Design</a>
-                            </li>
-        
-                        </ul>
-                    </div>
-    
-                    <div>
-                        <h2 style="font-size: 2rem; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Juárez</h2>
-                        <ul class="swiss-list" style="border-top: none;">
-    
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/architects-juarez.html">Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/residential-architects-juarez.html">Residential Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/commercial-architects-juarez.html">Commercial Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/renovation-contractors-juarez.html">Renovation Contractors</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/interior-design-juarez.html">Interior Design</a>
-                            </li>
-        
-                        </ul>
-                    </div>
-    
-                    <div>
-                        <h2 style="font-size: 2rem; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Coyoacán</h2>
-                        <ul class="swiss-list" style="border-top: none;">
-    
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/architects-coyoacan.html">Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/residential-architects-coyoacan.html">Residential Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/commercial-architects-coyoacan.html">Commercial Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/renovation-contractors-coyoacan.html">Renovation Contractors</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/interior-design-coyoacan.html">Interior Design</a>
-                            </li>
-        
-                        </ul>
-                    </div>
-    
-                    <div>
-                        <h2 style="font-size: 2rem; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Del Valle</h2>
-                        <ul class="swiss-list" style="border-top: none;">
-    
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/architects-del-valle.html">Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/residential-architects-del-valle.html">Residential Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/commercial-architects-del-valle.html">Commercial Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/renovation-contractors-del-valle.html">Renovation Contractors</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/interior-design-del-valle.html">Interior Design</a>
-                            </li>
-        
-                        </ul>
-                    </div>
-    
-                    <div>
-                        <h2 style="font-size: 2rem; border-bottom: 1px solid #000; padding-bottom: 10px; margin-bottom: 20px;">Narvarte</h2>
-                        <ul class="swiss-list" style="border-top: none;">
-    
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/architects-narvarte.html">Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/residential-architects-narvarte.html">Residential Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/commercial-architects-narvarte.html">Commercial Architects</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/renovation-contractors-narvarte.html">Renovation Contractors</a>
-                            </li>
-        
-                            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                                <a href="locations/interior-design-narvarte.html">Interior Design</a>
-                            </li>
-        
-                        </ul>
-                    </div>
-    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-anzures.html" style="border: none;">
+                        <img src="img/locations/anzures-hero.png" alt="Anzures" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Anzures</h2>
+                                <p>Nestled between the corporate pulse of Reforma and the exclusive serenity of Polanco, Anzures offers a singular blend of mid-century grace and contemporary luxury.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
                 </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-bosques-de-las-lomas.html" style="border: none;">
+                        <img src="img/locations/bosques-de-las-lomas-hero.png" alt="Bosques De Las Lomas" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Bosques De Las Lomas</h2>
+                                <p>Beyond the pristine security gates and manicured ravines, Bosques de las Lomas is an architectural and financial ecosystem.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-centro-historico.html" style="border: none;">
+                        <img src="img/locations/centro-historico-hero.webp" alt="Centro Historico" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Centro Historico</h2>
+                                <p>We translate the monumental ambition of Mexico City's historic core into a precise, architecturally sound investment, bridging international standards with unparalleled local expertise.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-chimalistac.html" style="border: none;">
+                        <img src="img/locations/chimalistac-hero.png" alt="Chimalistac" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Chimalistac</h2>
+                                <p>Where 18th-century tranquility meets 2026 innovation, Chimalistac is more than a neighborhood—it’s a declaration of <strong>heritage capital</strong>.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-condesa.html" style="border: none;">
+                        <img src="img/locations/condesa-hero.png" alt="Condesa" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Condesa</h2>
+                                <p>An Art Deco treasure where creative professionals and expats find life moving at a human pace.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-coyoacan.html" style="border: none;">
+                        <img src="img/locations/coyoacan-hero.png" alt="Coyoacán" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Coyoacán</h2>
+                                <p>In a Mexico City reaching for the sky, Coyoacán remains resolutely grounded—a colonial villa protected by federal mandate.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-cuauhtemoc.html" style="border: none;">
+                        <img src="img/locations/cuauhtemoc-hero.png" alt="Cuauhtemoc" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Cuauhtemoc</h2>
+                                <p>Step into Cuauhtémoc, a neighborhood meticulously engineered for the discerning global resident.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-del-valle.html" style="border: none;">
+                        <img src="img/locations/del-valle-hero.png" alt="Del Valle" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Del Valle</h2>
+                                <p>In the complex residential tapestry of Mexico City, Del Valle stands as a testament to balanced urbanism.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-escandon.html" style="border: none;">
+                        <img src="img/locations/escandon-hero.webp" alt="Escandon" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Escandon</h2>
+                                <p>Beyond the hyper-gentrified, Escandón beckons.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-interlomas.html" style="border: none;">
+                        <img src="img/locations/interlomas-hero.webp" alt="Interlomas" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Interlomas</h2>
+                                <p>On the western periphery of the Mexico City metropolitan area lies Interlomas, a nexus for ultra-high-net-worth individuals, expatriate executives, and sophisticated international capital.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-juarez.html" style="border: none;">
+                        <img src="img/locations/juarez-hero.png" alt="Juárez" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Juárez</h2>
+                                <p>Colonia Juárez is not merely a neighborhood; it is a meticulously preserved chronicle of Mexico City's Belle Époque.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-lomas-de-chapultepec.html" style="border: none;">
+                        <img src="img/locations/lomas-de-chapultepec-hero.png" alt="Lomas de Chapultepec" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Lomas de Chapultepec</h2>
+                                <p>For the international elite, Lomas de Chapultepec is not merely an address; it is a declaration.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-napoles.html" style="border: none;">
+                        <img src="img/locations/napoles-hero.png" alt="Napoles" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Napoles</h2>
+                                <p>Positioned where dynamic urbanity meets calculated investment, Nápoles is more than a neighborhood.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-narvarte.html" style="border: none;">
+                        <img src="img/locations/narvarte-hero.png" alt="Narvarte" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Narvarte</h2>
+                                <p>As central CDMX cores reach saturation, Narvarte emerges as the strategic focus for discerning international capital.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-polanco.html" style="border: none;">
+                        <img src="img/locations/polanco-hero.webp" alt="Polanco" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Polanco</h2>
+                                <p>Beyond its reputation for luxury, Polanco is Mexico City's premier <strong>capital preservation asset class</strong>.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-roma-norte.html" style="border: none;">
+                        <img src="img/locations/roma-norte-hero.png" alt="Roma Norte" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Roma Norte</h2>
+                                <p>You've witnessed the allure of Roma Norte on screen; now, understand the precision required to claim a piece of its Porfirian legacy.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-roma-sur.html" style="border: none;">
+                        <img src="img/locations/roma-sur-hero.png" alt="Roma Sur" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Roma Sur</h2>
+                                <p>Where cultural legacy converges with 21st-century architectural ambition, Roma Sur stands as Mexico City's premier micro-market for the discerning investor.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-san-angel.html" style="border: none;">
+                        <img src="img/locations/san-angel-hero.png" alt="San Angel" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>San Angel</h2>
+                                <p>In Mexico City's most distinguished heritage enclave, ownership transcends acquisition; it becomes an act of curatorial stewardship.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-san-miguel-chapultepec.html" style="border: none;">
+                        <img src="img/locations/san-miguel-chapultepec-hero.png" alt="San Miguel Chapultepec" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>San Miguel Chapultepec</h2>
+                                <p>Bordering the rarefied air of Polanco yet infused with the historic soul of Old Mexico City, San Miguel Chapultepec (SMC) offers an unparalleled arbitrage opportunity.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-san-rafael.html" style="border: none;">
+                        <img src="img/locations/san-rafael-hero.png" alt="San Rafael" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>San Rafael</h2>
+                                <p>From its Porfirian-era genesis on the reclaimed bed of Lake Texcoco, San Rafael has always been a neighborhood of ambition.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-santa-fe.html" style="border: none;">
+                        <img src="img/locations/santa-fe-hero.png" alt="Santa Fe" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Santa Fe</h2>
+                                <p>From former sand mines to a premier corporate nexus, Santa Fe has fundamentally matured.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="neighborhood-card">
+                    <a href="locations/architects-santa-maria-de-la-ribera.html" style="border: none;">
+                        <img src="img/locations/santa-maria-de-la-ribera-hero.png" alt="Santa Maria De La Ribera" class="neighborhood-image">
+                        <div class="card-content">
+                            <div>
+                                <h2>Santa Maria De La Ribera</h2>
+                                <p>Experience the authentic grandeur of Porfiriato Mexico, reimagined for the 21st century.</p>
+                            </div>
+                            <span class="btn-secondary" style="text-align: center; width: 100%;">View Guide</span>
+                        </div>
+                    </a>
+                </div>
+    
             </div>
-        </section>
+        </div>
     </main>
 
     <footer class="footer">
@@ -333,12 +394,13 @@
                     <li><a href="#">Instagram</a></li>
                     <li><a href="#">LinkedIn</a></li>
                     <li><a href="mailto:info@talacha.mx">Email</a></li>
+                    <li><a href="tel:+525594356985">55 9435 6985</a></li>
                 </ul>
             </div>
              <div>
                 <h4>Directory</h4>
                 <ul>
-                    <li><a href="directory.html">View All 50 Zones</a></li>
+                    <li><a href="directory.html">View all neighborhoods</a></li>
                 </ul>
             </div>
         </div>
