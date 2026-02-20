@@ -8,24 +8,6 @@
 # These ensure clean URLs by removing the .html extension and handling trailing slashes.
 
 [[redirects]]
-  from = "https://mexicocityarchitect.com/*"
-  to = "https://www.mexicocityarchitect.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/index.html"
-  to = "/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/*/"
-  to = "/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
   from = "/locations/"
   to = "/directory"
   status = 301
@@ -34,19 +16,6 @@
 [[redirects]]
   from = "/locations"
   to = "/directory"
-  status = 301
-  force = true
-
-# Catch-all for any other .html files
-[[redirects]]
-  from = "/:page.html"
-  to = "/:page"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/locations/:page.html"
-  to = "/locations/:page"
   status = 301
   force = true
 
